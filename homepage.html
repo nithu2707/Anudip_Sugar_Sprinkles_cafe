@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf6f0">
+    <title>Your Account | Sugar Sprinkles Cafe</title>
+
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #24140e;
+            --muted: #6f594f;
+            --cream: #faf6f0;
+            --paper: #ffffff;
+            --rose: #e76f84;
+            --rose-dark: #3a2217;
+            --pink-accent: #f4acb7;
+            --gold: #d4af37;
+            --line: #ede1d5;
+            --green: #2d8a4e;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--ink);
+            background:
+                radial-gradient(ellipse at 85% 5%, rgba(244, 172, 183, .25), transparent 40%),
+                var(--cream);
+        }
+
+        a { color: inherit; }
+
+        .site-header {
+            height: 78px;
+            padding: 0 clamp(20px, 6vw, 88px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            background: rgba(250, 246, 240, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1.5px solid var(--pink-accent);
+            border-radius: 50%;
+            background: #fde8ed;
+            color: var(--rose);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: .01em;
+            color: var(--ink);
+        }
+
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-link {
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header-link:hover { color: var(--rose); }
+
+        main {
+            width: min(1080px, calc(100% - 40px));
+            min-height: calc(100vh - 138px);
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(390px, .88fr);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--paper);
+            box-shadow: 0 24px 70px rgba(58, 34, 23, .10);
+        }
+
+        .story {
+            position: relative;
+            min-height: 680px;
+            display: flex;
+            align-items: flex-end;
+            padding: clamp(32px, 5vw, 62px);
+            overflow: hidden;
+            color: #fff9f0;
+            background:
+                linear-gradient(180deg, rgba(36, 20, 14, .15) 15%, rgba(36, 20, 14, .82) 100%),
+                url("sugar_sprinkles_hero.jpg") center / cover no-repeat,
+                #3a2217;
+        }
+
+        .story::before,
+        .story::after {
+            position: absolute;
+            content: "";
+            pointer-events: none;
+        }
+
+        .story::before {
+            width: 250px;
+            height: 250px;
+            top: 48px;
+            right: -80px;
+            border: 1px solid rgba(255, 249, 240, .3);
+            border-radius: 50%;
+        }
+
+        .story::after {
+            width: 205px;
+            height: 205px;
+            top: 70px;
+            right: -57px;
+            border: 1px solid rgba(255, 249, 240, .2);
+            border-radius: 50%;
+        }
+
+        .story-copy { position: relative; z-index: 1; max-width: 390px; }
+
+        .eyebrow {
+            margin: 0 0 17px;
+            color: #e9c8ad;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .story h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 5vw, 57px);
+            font-weight: 400;
+            line-height: 1.06;
+        }
+
+        .story-copy > p:last-of-type {
+            max-width: 330px;
+            margin: 19px 0 27px;
+            color: rgba(255, 249, 240, .82);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .story-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 249, 240, .8);
+            font-size: 11px;
+            letter-spacing: .04em;
+        }
+
+        .story-note span { color: #edc7a8; font-size: 16px; }
+
+        .account-panel {
+            min-width: 0;
+            padding: clamp(32px, 5vw, 62px) clamp(26px, 5vw, 58px);
+            align-self: center;
+        }
+
+        .panel-eyebrow {
+            margin: 0 0 10px;
+            color: var(--rose);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .19em;
+            text-transform: uppercase;
+        }
+
+        .account-panel h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 35px;
+            font-weight: 400;
+            letter-spacing: -.025em;
+        }
+
+        .panel-intro {
+            margin: 9px 0 25px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .tab {
+            position: relative;
+            padding: 12px 6px;
+            border: 0;
+            background: transparent;
+            color: #91847c;
+            cursor: pointer;
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .tab[aria-selected="true"] { color: var(--rose-dark); font-weight: 700; }
+
+        .tab[aria-selected="true"]::after {
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            left: 0;
+            height: 2px;
+            background: var(--rose);
+            content: "";
+        }
+
+        .form-grid { display: grid; gap: 15px; }
+        .field { display: grid; gap: 7px; }
+
+        .field label {
+            color: #514239;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .025em;
+        }
+
+        .field input {
+            width: 100%;
+            height: 45px;
+            padding: 0 13px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            outline: none;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 13px;
+            transition: border-color .18s, box-shadow .18s;
+        }
+
+        .field input::placeholder { color: #b5aaa2; }
+        .field input:focus { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(173, 104, 92, .12); }
+
+        .field-hint { margin: -2px 0 0; color: var(--muted); font-size: 10px; }
+
+        .primary-button {
+            width: 100%;
+            min-height: 47px;
+            margin-top: 5px;
+            border: 0;
+            border-radius: 6px;
+            background: var(--rose-dark);
+            color: white;
+            cursor: pointer;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            transition: background .18s, transform .18s;
+        }
+
+        .primary-button:hover { background: #75423c; transform: translateY(-1px); }
+        .primary-button:focus-visible, .tab:focus-visible, a:focus-visible { outline: 3px solid #d9ad91; outline-offset: 3px; }
+        .form[hidden], .profile-view[hidden] { display: none; }
+
+        .message {
+            min-height: 19px;
+            margin: 14px 0 0;
+            color: var(--rose-dark);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .message[data-kind="success"] { color: var(--green); }
+
+        .privacy-note {
+            margin: 17px 0 0;
+            color: #94867e;
+            font-size: 10px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 24px 0;
+            padding-bottom: 22px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .avatar {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            flex: 0 0 auto;
+            place-items: center;
+            border-radius: 50%;
+            background: #f0e1d5;
+            color: var(--rose-dark);
+            font-family: Georgia, serif;
+            font-size: 24px;
+        }
+
+        .profile-name {
+            margin: 0 0 4px;
+            font-family: Georgia, serif;
+            font-size: 21px;
+        }
+
+        .profile-email { margin: 0; color: var(--muted); font-size: 12px; }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 19px;
+        }
+
+        .detail-card {
+            min-width: 0;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: #fffdfa;
+        }
+
+        .detail-card span {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--muted);
+            font-size: 9px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .detail-card strong {
+            display: block;
+            overflow-wrap: anywhere;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .profile-actions { display: grid; gap: 10px; }
+
+        .secondary-button {
+            min-height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: transparent;
+            color: var(--rose-dark);
+            cursor: pointer;
+            font: inherit;
+            font-size: 12px;
+        }
+
+        .secondary-button:hover { background: #fbf4ef; }
+
+        .site-footer {
+            padding: 0 20px 20px;
+            color: #9c8e85;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 760px) {
+            main {
+                width: min(540px, calc(100% - 28px));
+                min-height: 0;
+                margin: 18px auto 24px;
+                grid-template-columns: 1fr;
+            }
+
+            .story { min-height: 265px; padding: 30px; }
+            .story h1 { max-width: 360px; font-size: 39px; }
+            .story-copy > p:last-of-type { margin: 11px 0 13px; }
+            .story-note { font-size: 10px; }
+            .account-panel { padding: 32px clamp(22px, 7vw, 42px) 38px; }
+        }
+
+        @media (max-width: 420px) {
+            .site-header { height: 66px; padding: 0 17px; }
+            .brand-name { font-size: 16px; }
+            .header-link { font-size: 11px; }
+            .story { min-height: 230px; padding: 25px; }
+            .story h1 { font-size: 34px; }
+            .account-panel h2 { font-size: 31px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Sugar Sprinkles Cafe home">
+            <span class="brand-mark" aria-hidden="true">☕</span>
+            <span class="brand-name">Sugar Sprinkles Cafe</span>
+        </a>
+        <div class="header-links">
+            <a class="header-link" href="index.html">← Back to Cafe Home</a>
+            <a class="header-link" href="menupage.html">Explore Our Menu &rarr;</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="story" aria-label="Welcome to Sugar Sprinkles Cafe">
+            <div class="story-copy">
+                <p class="eyebrow">A little sweetness, every day</p>
+                <h1>Your cozy corner for life's sweeter moments.</h1>
+                <p>Freshly brewed coffee, handcrafted treats, and a warm welcome waiting just for you.</p>
+                <div class="story-note"><span aria-hidden="true">✦</span> Made with care. Served with a sprinkle of joy.</div>
+            </div>
+        </section>
+
+        <section class="account-panel" aria-live="polite">
+            <div id="account-area">
+                <p class="panel-eyebrow">Your cafe, your way</p>
+                <h2 id="panel-title">Welcome back</h2>
+                <p class="panel-intro" id="panel-intro">Sign in for a little more sweetness.</p>
+
+                <div class="tabs" role="tablist" aria-label="Account options">
+                    <button class="tab" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-form">Sign in</button>
+                    <button class="tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-form">Create account</button>
+                </div>
+
+                <form class="form form-grid" id="login-form" role="tabpanel" aria-labelledby="login-tab">
+                    <div class="field">
+                        <label for="login-email">Email address</label>
+                        <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="login-password">Password</label>
+                        <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
+                    </div>
+                    <button class="primary-button" type="submit">SIGN IN</button>
+                </form>
+
+                <form class="form form-grid" id="register-form" role="tabpanel" aria-labelledby="register-tab" hidden>
+                    <div class="field">
+                        <label for="register-name">Your name</label>
+                        <input id="register-name" name="name" type="text" autocomplete="name" placeholder="How should we greet you?" minlength="2" maxlength="60" required>
+                    </div>
+                    <div class="field">
+                        <label for="register-email">Email address</label>
+                        <input id="register-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="register-phone">Phone number <span class="field-hint">(optional)</span></label>
+                        <input id="register-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your contact number" maxlength="24">
+                    </div>
+                    <div class="field">
+                        <label for="register-password">Create a password</label>
+                        <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required>
+                    </div>
+                    <div class="field">
+                        <label for="confirm-password">Confirm password</label>
+                        <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter your password again" minlength="8" required>
+                    </div>
+                    <button class="primary-button" type="submit">CREATE MY ACCOUNT</button>
+                </form>
+
+                <p class="message" id="form-message" role="status" aria-live="polite"></p>
+                <p class="privacy-note">Demo account saved on this device only. Connect a secure backend before using real customer accounts.</p>
+            </div>
+
+            <div class="profile-view" id="profile-view" hidden>
+                <p class="panel-eyebrow">Your Sugar Sprinkles account</p>
+                <h2>Your profile</h2>
+                <p class="panel-intro">Lovely to have you at our table.</p>
+
+                <div class="profile-top">
+                    <div class="avatar" id="profile-avatar" aria-hidden="true">S</div>
+                    <div>
+                        <h3 class="profile-name" id="profile-name"></h3>
+                        <p class="profile-email" id="profile-email"></p>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <div class="detail-card">
+                        <span>Name</span>
+                        <strong id="profile-detail-name"></strong>
+                    </div>
+                    <div class="detail-card">
+                        <span>Phone</span>
+                        <strong id="profile-phone"></strong>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="secondary-button" id="edit-profile" type="button">Edit profile details</button>
+                    <button class="secondary-button" id="sign-out" type="button">Sign out</button>
+                </div>
+
+                <form class="form form-grid" id="edit-form" hidden>
+                    <div class="field">
+                        <label for="edit-name">Your name</label>
+                        <input id="edit-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="60" required>
+                    </div>
+                    <div class="field">
+                        <label for="edit-phone">Phone number <span class="field-hint">(optional)</span></label>
+                        <input id="edit-phone" name="phone" type="tel" autocomplete="tel" maxlength="24">
+                    </div>
+                    <button class="primary-button" type="submit">SAVE CHANGES</button>
+                    <button class="secondary-button" id="cancel-edit" type="button">Cancel</button>
+                </form>
+                <p class="message" id="profile-message" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">A little sweetness, made fresh for you · Sugar Sprinkles Cafe</footer>
+
+    <script>
+        "use strict";
+
+        const STORAGE_KEY = "sugarSprinklesCafeAccount";
+        const SESSION_KEY = "sugarSprinklesCafeSignedIn";
+        const loginTab = document.getElementById("login-tab");
+        const registerTab = document.getElementById("register-tab");
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        const editForm = document.getElementById("edit-form");
+        const accountArea = document.getElementById("account-area");
+        const profileView = document.getElementById("profile-view");
+        const formMessage = document.getElementById("form-message");
+        const profileMessage = document.getElementById("profile-message");
+        let currentAccount = null;
+
+        function showMessage(element, text, kind) {
+            element.textContent = text;
+            element.dataset.kind = kind || "error";
+        }
+
+        function switchTab(tab) {
+            const isLogin = tab === "login";
+            loginTab.setAttribute("aria-selected", String(isLogin));
+            registerTab.setAttribute("aria-selected", String(!isLogin));
+            loginForm.hidden = !isLogin;
+            registerForm.hidden = isLogin;
+            document.getElementById("panel-title").textContent = isLogin ? "Welcome back" : "A seat just for you";
+            document.getElementById("panel-intro").textContent = isLogin
+                ? "Sign in for a little more sweetness."
+                : "Create an account and make yourself at home.";
+            showMessage(formMessage, "", "success");
+        }
+
+        function readSavedAccount() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return null;
+            const account = JSON.parse(saved);
+            if (!account || typeof account.email !== "string" || typeof account.passwordHash !== "string" ||
+                typeof account.salt !== "string" || typeof account.name !== "string") {
+                throw new Error("The saved account data is invalid. Please clear this site's saved data and register again.");
+            }
+            return account;
+        }
+
+        function bytesToHex(bytes) {
+            return Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
+        }
+
+        async function hashPassword(password, salt) {
+            if (!window.crypto || !window.crypto.subtle) {
+                throw new Error("Secure password storage is unavailable here. Open this page on localhost or a secure website to continue.");
+            }
+            const key = await window.crypto.subtle.importKey(
+                "raw",
+                new TextEncoder().encode(password),
+                "PBKDF2",
+                false,
+                ["deriveBits"]
+            );
+            const digest = await window.crypto.subtle.deriveBits(
+                { name: "PBKDF2", salt: new TextEncoder().encode(salt), iterations: 310000, hash: "SHA-256" },
+                key,
+                256
+            );
+            return bytesToHex(new Uint8Array(digest));
+        }
+
+        function saveAccount(account) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(account));
+        }
+
+        function displayProfile(account) {
+            currentAccount = account;
+            accountArea.hidden = true;
+            profileView.hidden = false;
+            editForm.hidden = true;
+            document.getElementById("profile-name").textContent = account.name;
+            document.getElementById("profile-email").textContent = account.email;
+            document.getElementById("profile-detail-name").textContent = account.name;
+            document.getElementById("profile-phone").textContent = account.phone || "Not added";
+            document.getElementById("profile-avatar").textContent = account.name.trim().charAt(0).toUpperCase();
+            document.getElementById("edit-name").value = account.name;
+            document.getElementById("edit-phone").value = account.phone || "";
+            showMessage(profileMessage, "", "success");
+        }
+
+        loginTab.addEventListener("click", () => switchTab("login"));
+        registerTab.addEventListener("click", () => switchTab("register"));
+
+        registerForm.addEventListener("submit", async event => {
+            event.preventDefault();
+            showMessage(formMessage, "", "success");
+
+            const data = new FormData(registerForm);
+            const name = String(data.get("name")).trim();
+            const email = String(data.get("email")).trim().toLowerCase();
+            const phone = String(data.get("phone")).trim();
+            const password = String(data.get("password"));
+            const confirmPassword = String(data.get("confirmPassword"));
+
+            if (password !== confirmPassword) {
+                showMessage(formMessage, "Those passwords don't match. Please check and try again.");
+                document.getElementById("confirm-password").focus();
+                return;
+            }
+
+            try {
+                if (readSavedAccount()) {
+                    showMessage(formMessage, "An account is already saved on this device. Sign in instead.");
+                    return;
+                }
+                const salt = bytesToHex(window.crypto.getRandomValues(new Uint8Array(16)));
+                const passwordHash = await hashPassword(password, salt);
+                const account = { name, email, phone, salt, passwordHash };
+                saveAccount(account);
+                sessionStorage.setItem(SESSION_KEY, email);
+                displayProfile(account);
+            } catch (error) {
+                showMessage(formMessage, error instanceof Error ? error.message : "We couldn't create your account. Please try again.");
+            }
+        });
+
+        loginForm.addEventListener("submit", async event => {
+            event.preventDefault();
+            showMessage(formMessage, "", "success");
+
+            const data = new FormData(loginForm);
+            const email = String(data.get("email")).trim().toLowerCase();
+            const password = String(data.get("password"));
+
+            try {
+                const account = readSavedAccount();
+                if (!account || account.email !== email || await hashPassword(password, account.salt) !== account.passwordHash) {
+                    showMessage(formMessage, "We couldn't find a matching account. Check your details or create an account.");
+                    return;
+                }
+                sessionStorage.setItem(SESSION_KEY, email);
+                displayProfile(account);
+            } catch (error) {
+                showMessage(formMessage, error instanceof Error ? error.message : "We couldn't sign you in. Please try again.");
+            }
+        });
+
+        document.getElementById("edit-profile").addEventListener("click", () => {
+            editForm.hidden = false;
+            document.getElementById("edit-name").focus();
+        });
+
+        document.getElementById("cancel-edit").addEventListener("click", () => {
+            editForm.hidden = true;
+            showMessage(profileMessage, "", "success");
+        });
+
+        editForm.addEventListener("submit", event => {
+            event.preventDefault();
+            if (!currentAccount) return;
+
+            const data = new FormData(editForm);
+            const updatedAccount = {
+                ...currentAccount,
+                name: String(data.get("name")).trim(),
+                phone: String(data.get("phone")).trim()
+            };
+
+            try {
+                saveAccount(updatedAccount);
+                displayProfile(updatedAccount);
+                showMessage(profileMessage, "Your profile has been updated.", "success");
+            } catch (error) {
+                showMessage(profileMessage, error instanceof Error ? error.message : "We couldn't save your changes. Please try again.");
+            }
+        });
+
+        document.getElementById("sign-out").addEventListener("click", () => {
+            currentAccount = null;
+            sessionStorage.removeItem(SESSION_KEY);
+            profileView.hidden = true;
+            accountArea.hidden = false;
+            loginForm.reset();
+            switchTab("login");
+            showMessage(formMessage, "You've signed out. See you again soon!", "success");
+        });
+
+        try {
+            const savedAccount = readSavedAccount();
+            if (savedAccount && sessionStorage.getItem(SESSION_KEY) === savedAccount.email) displayProfile(savedAccount);
+        } catch (error) {
+            showMessage(formMessage, error instanceof Error ? error.message : "We couldn't load the saved account.");
+        }
+    </script>
+</body>
+</html>

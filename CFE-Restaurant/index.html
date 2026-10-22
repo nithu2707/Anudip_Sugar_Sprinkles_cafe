@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFE Restaurant - Exceptional Taste, Unforgettable Moments. Experience luxury dining, artisanal Indian & World cuisines, wood-fired pizzas, and gourmet coffee.">
+  <meta name="keywords" content="CFE Restaurant, fine dining, gourmet food, Indian cuisine, Bengaluru luxury dining, table reservation">
+  <title>CFE Restaurant | Exceptional Taste. Unforgettable Moments.</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions (Auth, Cart, Mobile Toggle) -->
+      <div class="nav-actions">
+        <!-- Auth item is injected dynamically by js/main.js -->
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+      <!-- Mobile Auth dynamic item injected by main.js -->
+    </nav>
+    <div style="margin-top:auto; padding-top:20px; border-top:1px solid var(--color-border); font-size:0.85rem; color:var(--color-text-muted);">
+      <p><strong>CFE Restaurant</strong></p>
+      <p>42 Royal Promenade, Indiranagar</p>
+      <p>Open Daily: 11:30 AM – 11:30 PM</p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-pattern"></div>
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>✦</span> MICHELIN-INSPIRED CULINARY EXCELLENCE
+          </div>
+          <h1 class="hero-title">
+            Exceptional Taste. <span>Unforgettable Moments.</span>
+          </h1>
+          <p class="hero-desc">
+            Welcome to CFE Restaurant, where regal culinary heritage meets modern gourmet artistry. Savor authentic regional Indian treasures, wood-fired sourdough pizzas, artisanal grills, and handcrafted brews prepared with farm-fresh organic ingredients.
+          </p>
+          <div class="hero-cta">
+            <a href="menu.html" class="btn btn-gold btn-lg">Explore Menu</a>
+            <a href="reservation.html" class="btn btn-outline-white btn-lg">Reserve a Table</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Exquisite Gourmet Dishes at CFE Restaurant">
+          </div>
+          <div class="hero-floating-card">
+            <div class="hero-floating-icon">★</div>
+            <div>
+              <div style="font-weight:700; font-size:0.95rem;">4.9 / 5.0 Rating</div>
+              <div style="font-size:0.78rem; color:var(--color-text-muted);">Over 12,000+ Delighted Guests</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RESTAURANT INTRODUCTION & PHILOSOPHY
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About CFE Restaurant</span>
+          <h2>A Symphony of Heritage &amp; Contemporary Flavors</h2>
+          <p class="section-subtitle">
+            Founded with an unyielding passion for gastronomy, CFE Restaurant offers an immersive dining experience where timeless recipes are brought to life through pristine technique and warm Indian hospitality.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div>
+            <div class="section-tag" style="margin-bottom:12px;">Farm-To-Table Commitment</div>
+            <h3 style="margin-bottom:18px;">Handcrafted With Pure Ingredients</h3>
+            <p style="color:var(--color-text-muted); margin-bottom:16px;">
+              Every spice is stone-ground in small batches to preserve volatile essential oils. Our slow-fermented pizza dough proofs naturally for 48 hours, while our dum biryanis simmer over glowing wood embers in dough-sealed clay pots.
+            </p>
+            <p style="color:var(--color-text-muted); margin-bottom:28px;">
+              From organic cold-pressed oils to heirloom grains and single-origin Arabica roasts, we ensure each plate delivered to your table is vibrant, healthy, and unforgettable.
+            </p>
+            <div style="display:flex; gap:24px;">
+              <div>
+                <h4 style="color:var(--color-accent-dark); font-size:2rem; font-family:var(--font-heading);">100%</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); font-weight:600;">Authentic Recipes</p>
+              </div>
+              <div style="border-left:1px solid var(--color-border); padding-left:24px;">
+                <h4 style="color:var(--color-accent-dark); font-size:2rem; font-family:var(--font-heading);">24+</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); font-weight:600;">Master Chefs</p>
+              </div>
+              <div style="border-left:1px solid var(--color-border); padding-left:24px;">
+                <h4 style="color:var(--color-accent-dark); font-size:2rem; font-family:var(--font-heading);">8</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); font-weight:600;">Culinary Categories</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="position:relative;">
+            <div style="border-radius:24px; overflow:hidden; box-shadow:var(--shadow-lg); border:2px solid var(--color-border);">
+              <img src="assets/images/ramyacafe.jpeg" alt="CFE Restaurant Ambience" style="width:100%; height:380px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div style="position:absolute; bottom:-20px; right:-15px; background:#ffffff; padding:16px 20px; border-radius:16px; box-shadow:var(--shadow-md); border:1px solid rgba(197, 160, 89, 0.4); display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.8rem; color:var(--color-accent);">🌿</span>
+              <div>
+                <div style="font-weight:700; font-size:0.9rem;">Fresh Farm Produce</div>
+                <div style="font-size:0.75rem; color:var(--color-text-muted);">Sourced daily from local farmers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FEATURED FOOD CARDS (POPULAR DISHES)
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Chef's Curated Selection</span>
+          <h2>Featured Gourmet Dishes</h2>
+          <p class="section-subtitle">
+            Explore our most celebrated signature creations, adored by culinary critics and regular patrons alike.
+          </p>
+        </div>
+
+        <div class="dishes-grid" id="homeFeaturedGrid">
+          <!-- Featured Dish 1 -->
+          <article class="dish-card">
+            <div class="dish-card-img-wrap">
+              <span class="diet-badge non-veg" title="Non-Vegetarian"></span>
+              <span class="dish-card-tag">Signature Dum</span>
+              <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="Dum Pukht Hyderabadi Chicken Biryani" class="dish-card-img">
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-category-label">Biryani</span>
+              <h3 class="dish-title">Dum Pukht Chicken Biryani</h3>
+              <p class="dish-desc">Aged long-grain basmati rice and marinated spring chicken sealed in dough handi with saffron, mint, and fried onions.</p>
+              <div class="dish-meta">
+                <span class="dish-price">₹490</span>
+                <span class="dish-rating">★ 5.0</span>
+              </div>
+              <div class="dish-card-actions">
+                <button class="btn btn-primary home-add-btn" data-id="biryani-1" data-name="Dum Pukht Hyderabadi Chicken Biryani" data-price="490" data-img="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" data-cat="Biryani" data-veg="false">
+                  Add to Cart
+                </button>
+                <a href="menu.html?category=Biryani" class="btn btn-outline btn-icon" title="View in Menu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured Dish 2 -->
+          <article class="dish-card">
+            <div class="dish-card-img-wrap">
+              <span class="diet-badge veg" title="Vegetarian"></span>
+              <span class="dish-card-tag">Royal Specialty</span>
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" alt="Royal Paneer Lababdar" class="dish-card-img">
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-category-label">North Indian</span>
+              <h3 class="dish-title">Royal Paneer Lababdar</h3>
+              <p class="dish-desc">Artisanal malai paneer cubes bathed in a rich tomato, cashew nut, and melon seed reduction, kissed with kasuri methi.</p>
+              <div class="dish-meta">
+                <span class="dish-price">₹420</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+              <div class="dish-card-actions">
+                <button class="btn btn-primary home-add-btn" data-id="north-1" data-name="Royal Paneer Lababdar" data-price="420" data-img="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" data-cat="North Indian" data-veg="true">
+                  Add to Cart
+                </button>
+                <a href="menu.html?category=North Indian" class="btn btn-outline btn-icon" title="View in Menu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured Dish 3 -->
+          <article class="dish-card">
+            <div class="dish-card-img-wrap">
+              <span class="diet-badge veg" title="Vegetarian"></span>
+              <span class="dish-card-tag">Wood Fired</span>
+              <img src="assets/images/pizza.png" alt="Margherita Con Bufala" class="dish-card-img">
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-category-label">Pizza and Burgers</span>
+              <h3 class="dish-title">Wood-Fired Margherita Pizza</h3>
+              <p class="dish-desc">48-hour slow fermented sourdough crust, San Marzano tomato puree, buffalo mozzarella, and fresh garden basil leaves.</p>
+              <div class="dish-meta">
+                <span class="dish-price">₹450</span>
+                <span class="dish-rating">★ 4.9</span>
+              </div>
+              <div class="dish-card-actions">
+                <button class="btn btn-primary home-add-btn" data-id="pnb-1" data-name="Artisan Wood-Fired Margherita Pizza" data-price="450" data-img="assets/images/pizza.png" data-cat="Pizza and Burgers" data-veg="true">
+                  Add to Cart
+                </button>
+                <a href="menu.html?category=Pizza and Burgers" class="btn btn-outline btn-icon" title="View in Menu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured Dish 4 -->
+          <article class="dish-card">
+            <div class="dish-card-img-wrap">
+              <span class="diet-badge veg" title="Vegetarian"></span>
+              <span class="dish-card-tag">Decadent</span>
+              <img src="assets/images/cake.jpeg" alt="Belgian Molten Lava Cake" class="dish-card-img">
+            </div>
+            <div class="dish-card-body">
+              <span class="dish-category-label">Desserts</span>
+              <h3 class="dish-title">Belgian Chocolate Lava Cake</h3>
+              <p class="dish-desc">Warm 70% dark Belgian chocolate soufflé cake with a gooey flowing center, paired with Madagascar vanilla gelato.</p>
+              <div class="dish-meta">
+                <span class="dish-price">₹320</span>
+                <span class="dish-rating">★ 5.0</span>
+              </div>
+              <div class="dish-card-actions">
+                <button class="btn btn-primary home-add-btn" data-id="dessert-1" data-name="Belgian Dark Chocolate Molten Lava Cake" data-price="320" data-img="assets/images/cake.jpeg" data-cat="Desserts" data-veg="true">
+                  Add to Cart
+                </button>
+                <a href="menu.html?category=Desserts" class="btn btn-outline btn-icon" title="View in Menu">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:45px;">
+          <a href="menu.html" class="btn btn-gold btn-lg">View Complete 24+ Dish Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RESTAURANT GALLERY
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visual Odyssey</span>
+          <h2>The CFE Ambience &amp; Kitchen</h2>
+          <p class="section-subtitle">
+            Immerse yourself in our plush dining room, lively café terrace, and open kitchen theatre.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/images/coffeee.jpeg" alt="Specialty Roasts & Coffee" onerror="this.src='https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Hand-Dripped Arabica Roasts</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/sandwitch.png" alt="Artisanal Sourdough Sandwich" onerror="this.src='https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Fresh Brioche &amp; Sourdough</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/chessballs.jpg" alt="Gourmet Finger Appetizers" onerror="this.src='https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Artisan Appetizers &amp; Poppers</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/juice.jpg" alt="Cold Pressed Elixirs" onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Cold-Pressed Fresh Elixirs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CUSTOMER TESTIMONIALS
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Guest Experiences</span>
+          <h2>Praised by Food Lovers &amp; Critics</h2>
+          <p class="section-subtitle">
+            Discover why our guests consider CFE Restaurant their preferred destination for celebrations and intimate dinners.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+          <!-- Review 1 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--color-accent); font-size:1.15rem; margin-bottom:12px;">★★★★★</div>
+            <p style="color:var(--color-text-muted); font-style:italic; line-height:1.7; margin-bottom:20px;">
+              "The Dum Pukht Chicken Biryani at CFE Restaurant is nothing short of sublime. Saffron aromas, melt-in-the-mouth chicken, and royal hospitality that makes every dinner memorable."
+            </p>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:44px; height:44px; border-radius:50%; background:var(--color-primary); color:var(--color-accent); font-weight:700; display:flex; align-items:center; justify-content:center;">RK</div>
+              <div>
+                <strong style="color:var(--color-primary-dark); font-size:0.95rem;">Rajesh Kannan</strong>
+                <div style="font-size:0.78rem; color:var(--color-text-muted);">Bengaluru Epicure Club</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--color-accent); font-size:1.15rem; margin-bottom:12px;">★★★★★</div>
+            <p style="color:var(--color-text-muted); font-style:italic; line-height:1.7; margin-bottom:20px;">
+              "From their wood-fired pizzas to the Mysore Ghee Roast Dosa and single-origin cold brews, the depth of flavor and presentation is comparable to five-star luxury hotels."
+            </p>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:44px; height:44px; border-radius:50%; background:var(--color-accent-dark); color:#ffffff; font-weight:700; display:flex; align-items:center; justify-content:center;">SM</div>
+              <div>
+                <strong style="color:var(--color-primary-dark); font-size:0.95rem;">Dr. Sanjana Menon</strong>
+                <div style="font-size:0.78rem; color:var(--color-text-muted);">Food &amp; Lifestyle Critic</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--color-accent); font-size:1.15rem; margin-bottom:12px;">★★★★★</div>
+            <p style="color:var(--color-text-muted); font-style:italic; line-height:1.7; margin-bottom:20px;">
+              "We celebrated our wedding anniversary here. The private corner booth, personalized service, and Belgian Molten Lava Cake created memories we will cherish forever."
+            </p>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:44px; height:44px; border-radius:50%; background:var(--color-primary-light); color:#ffffff; font-weight:700; display:flex; align-items:center; justify-content:center;">VA</div>
+              <div>
+                <strong style="color:var(--color-primary-dark); font-size:0.95rem;">Vikram &amp; Aarti</strong>
+                <div style="font-size:0.78rem; color:var(--color-text-muted);">Loyal Patrons</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         OPENING HOURS & CALL TO ACTION
+         ======================================================================== -->
+    <section class="section" style="background:linear-gradient(135deg, #0d271b 0%, #123826 100%); color:#ffffff;">
+      <div class="container" style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:50px; align-items:center;">
+        <div>
+          <span class="section-tag" style="background:rgba(197, 160, 89, 0.2); color:var(--color-accent-light);">Reserve Your Evening</span>
+          <h2 style="color:#ffffff; margin-bottom:18px;">Plan Your Memorable Table Today</h2>
+          <p style="color:rgba(255, 255, 255, 0.8); line-height:1.7; margin-bottom:28px;">
+            Whether it's an intimate candlelight dinner, business lunch, or family celebration, our dining captains are prepared to cater to every nuance of your visit.
+          </p>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="reservation.html" class="btn btn-gold btn-lg">Book Table Now</a>
+            <a href="contact.html" class="btn btn-outline-white btn-lg">Contact Us</a>
+          </div>
+        </div>
+
+        <div style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(197, 160, 89, 0.35); border-radius:var(--radius-lg); padding:32px; backdrop-filter:blur(10px);">
+          <h3 style="color:var(--color-accent-light); margin-bottom:18px; font-size:1.35rem;">Service Hours</h3>
+          <div style="display:flex; flex-direction:column; gap:14px; font-size:0.92rem;">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px dashed rgba(255, 255, 255, 0.2); padding-bottom:8px;">
+              <span>Monday – Thursday</span>
+              <strong>11:30 AM – 11:00 PM</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px dashed rgba(255, 255, 255, 0.2); padding-bottom:8px;">
+              <span>Friday – Saturday</span>
+              <strong>11:30 AM – Midnight</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px dashed rgba(255, 255, 255, 0.2); padding-bottom:8px;">
+              <span>Sunday Grand Brunch</span>
+              <strong>10:30 AM – 11:30 PM</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-top:6px; color:var(--color-accent-light);">
+              <span>Direct Reservation Desk</span>
+              <strong>+91 98765 43210</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and bespoke dining.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="footer-social-btn" aria-label="Facebook">FB</a>
+          <a href="#" class="footer-social-btn" aria-label="TripAdvisor">TA</a>
+          <a href="#" class="footer-social-btn" aria-label="Google Reviews">G</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="menu.html" class="footer-link">Our Menu (8 Categories)</a>
+          <a href="about.html" class="footer-link">About Our Heritage</a>
+          <a href="reservation.html" class="footer-link">Table Reservation</a>
+          <a href="cart.html" class="footer-link">Shopping Cart</a>
+          <a href="profile.html" class="footer-link">Member Profile</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Hours -->
+      <div>
+        <h4 class="footer-heading">Opening Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Mon – Fri:</span>
+            <strong>11:30 AM – 11:00 PM</strong>
+          </div>
+          <div class="footer-hours-item">
+            <span>Sat – Sun:</span>
+            <strong>10:30 AM – Midnight</strong>
+          </div>
+          <div class="footer-hours-item">
+            <span>Afternoon Tea:</span>
+            <strong>04:00 PM – 06:30 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Location & Contact -->
+      <div>
+        <h4 class="footer-heading">Find Us</h4>
+        <div style="font-size:0.88rem; color:rgba(255, 255, 255, 0.75); display:flex; flex-direction:column; gap:10px;">
+          <p>📍 42 Royal Promenade, 100ft Road, Indiranagar, Bengaluru, KA 560038</p>
+          <p>📞 Phone: +91 98765 43210 / +91 80 4123 4567</p>
+          <p>✉️ Email: reservations@cferestaurant.example.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Sub-bar -->
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved. Commercial Frontend Demonstration.</div>
+      <div style="display:flex; gap:18px;">
+        <a href="about.html" style="color:inherit;">Privacy Notice</a>
+        <a href="contact.html" style="color:inherit;">Support &amp; Feedback</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script>
+    // Home Page Direct Add to Cart Handlers
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.home-add-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const b = e.currentTarget;
+          const item = {
+            id: b.dataset.id,
+            name: b.dataset.name,
+            price: Number(b.dataset.price),
+            image: b.dataset.img,
+            category: b.dataset.cat,
+            isVeg: b.dataset.veg === 'true'
+          };
+          addToCart(item, 1);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

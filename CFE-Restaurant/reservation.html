@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Reserve a table at CFE Restaurant - Fine dining in Bengaluru. Book your lunch, dinner, or special celebration table with customizable seating preferences.">
+  <title>Reserve a Table | CFE Restaurant</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link active">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link active">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE HERO
+       ======================================================================== -->
+  <main>
+    <section class="reservation-hero">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(197, 160, 89, 0.2); color:var(--color-accent-light);">Unmatched
+          Hospitality</span>
+        <h1 style="color:#ffffff; margin-bottom:12px;">Reserve Your Experience</h1>
+        <p style="color:rgba(255, 255, 255, 0.85); max-width:620px; margin:0 auto; font-size:1.05rem;">
+          Join us for an exquisite culinary voyage. Request a prime table in our main chandeliers dining hall, breezy
+          garden terrace, or private dining enclave.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RESERVATION FORM & PERKS GRID
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="reservation-grid">
+          <!-- LEFT: The Reservation Form -->
+          <div class="reservation-card">
+            <!-- Demonstration Disclaimer Notice -->
+            <div class="demo-badge-banner" style="margin-bottom:24px;">
+              <span>⚠️</span>
+              <span><strong>Frontend Demonstration Notice:</strong> This reservation form simulates booking confirmation
+                in your browser. Reservations are not submitted to a real restaurant or live database.</span>
+            </div>
+
+            <h2 style="font-size:1.6rem; margin-bottom:8px;">Table Booking Request</h2>
+            <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:28px;">
+              Please provide your party details below. Fields marked with an asterisk (*) are mandatory.
+            </p>
+
+            <form id="reservationForm" novalidate>
+              <!-- Name & Email -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="resName">Full Name *</label>
+                  <div class="input-with-icon">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="resName" class="form-control" placeholder="e.g. Vikramaditya Roy" required>
+                  </div>
+                  <span class="form-error" id="resNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="resEmail">Email Address *</label>
+                  <div class="input-with-icon">
+                    <span class="input-icon">✉</span>
+                    <input type="email" id="resEmail" class="form-control" placeholder="roy@example.com" required>
+                  </div>
+                  <span class="form-error" id="resEmailError"></span>
+                </div>
+              </div>
+
+              <!-- Phone & Date -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="resPhone">Mobile Number *</label>
+                  <div class="input-with-icon">
+                    <span class="input-icon">📞</span>
+                    <input type="tel" id="resPhone" class="form-control" placeholder="10-digit mobile number" required>
+                  </div>
+                  <span class="form-error" id="resPhoneError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="resDate">Reservation Date *</label>
+                  <div class="input-with-icon">
+                    <span class="input-icon">📅</span>
+                    <input type="date" id="resDate" class="form-control" required>
+                  </div>
+                  <span class="form-error" id="resDateError"></span>
+                </div>
+              </div>
+
+              <!-- Number of Guests & Seating Area -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="resGuests">Number of Guests *</label>
+                  <select id="resGuests" class="form-control no-icon">
+                    <option value="1">1 Guest (Solo Dining)</option>
+                    <option value="2" selected>2 Guests (Intimate / Couple)</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests (Family Table)</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="8">8 Guests (Large Group)</option>
+                    <option value="10+">10+ Guests (Royal Banquet)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="resSeating">Preferred Seating Area</label>
+                  <select id="resSeating" class="form-control no-icon">
+                    <option value="Grand Chandelier Dining Hall">Grand Chandelier Dining Hall</option>
+                    <option value="Garden Courtyard Terrace (Outdoor)">Garden Courtyard Terrace (Outdoor)</option>
+                    <option value="Royal Heritage Private Booth">Royal Heritage Private Booth</option>
+                    <option value="Executive Chef's Counter Theatre">Executive Chef's Counter Theatre</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Time Slot Selection Pills -->
+              <div class="form-group">
+                <label class="form-label">Select Preferred Time Slot *</label>
+
+                <div
+                  style="font-size:0.78rem; font-weight:700; color:var(--color-accent-dark); text-transform:uppercase; margin-top:8px;">
+                  Lunch Service</div>
+                <div class="slot-selection-grid" style="margin-bottom:12px;">
+                  <button type="button" class="slot-pill" data-time="12:00 PM">12:00 PM</button>
+                  <button type="button" class="slot-pill" data-time="12:30 PM">12:30 PM</button>
+                  <button type="button" class="slot-pill" data-time="01:15 PM">01:15 PM</button>
+                  <button type="button" class="slot-pill" data-time="02:00 PM">02:00 PM</button>
+                </div>
+
+                <div
+                  style="font-size:0.78rem; font-weight:700; color:var(--color-accent-dark); text-transform:uppercase;">
+                  Dinner Service</div>
+                <div class="slot-selection-grid">
+                  <button type="button" class="slot-pill" data-time="07:00 PM">07:00 PM</button>
+                  <button type="button" class="slot-pill selected" data-time="07:30 PM">07:30 PM</button>
+                  <button type="button" class="slot-pill" data-time="08:15 PM">08:15 PM</button>
+                  <button type="button" class="slot-pill" data-time="09:00 PM">09:00 PM</button>
+                  <button type="button" class="slot-pill" data-time="09:45 PM">09:45 PM</button>
+                </div>
+              </div>
+
+              <!-- Special Requests -->
+              <div class="form-group">
+                <label class="form-label" for="resRequests">Special Requests / Occasion</label>
+                <textarea id="resRequests" class="form-control no-icon" rows="3"
+                  placeholder="e.g. Celebrating 10th anniversary, prefer quiet corner, high chair needed, or dietary allergies."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-gold btn-lg" style="width:100%; margin-top:14px;">
+                Request Table Reservation (Demo)
+              </button>
+            </form>
+          </div>
+
+          <!-- RIGHT: Dining Etiquette & Highlights -->
+          <div style="display:flex; flex-direction:column; gap:24px;">
+            <div class="reservation-perks-card">
+              <span class="section-tag" style="background:rgba(18, 56, 38, 0.1); color:var(--color-primary);">Dining
+                Excellence</span>
+              <h3 style="margin-bottom:14px; font-size:1.35rem;">Why Book in Advance?</h3>
+              <ul
+                style="display:flex; flex-direction:column; gap:14px; font-size:0.9rem; color:var(--color-text-muted);">
+                <li style="display:flex; gap:10px;">
+                  <span style="color:var(--color-accent-dark); font-weight:700;">✦</span>
+                  <span><strong>Zero Wait Time:</strong> Your bespoke table is prepared and dressed 15 minutes before
+                    your arrival.</span>
+                </li>
+                <li style="display:flex; gap:10px;">
+                  <span style="color:var(--color-accent-dark); font-weight:700;">✦</span>
+                  <span><strong>Tailored Celebrations:</strong> Customized dessert plating with names for birthdays and
+                    anniversaries.</span>
+                </li>
+                <li style="display:flex; gap:10px;">
+                  <span style="color:var(--color-accent-dark); font-weight:700;">✦</span>
+                  <span><strong>Sommelier Consultation:</strong> Dedicated pairing recommendations for our signature dum
+                    biryanis and tandoor grills.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Operating Schedule Card -->
+            <div
+              style="background:#ffffff; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+              <h4
+                style="color:var(--color-primary-dark); margin-bottom:14px; font-family:var(--font-heading); font-size:1.2rem;">
+                Dining Enquiries</h4>
+              <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:14px;">
+                For private banquets exceeding 15 guests or corporate galas, please connect directly with our Maitre
+                d'hôtel.
+              </p>
+              <div style="font-size:0.92rem; font-weight:700; color:var(--color-primary);">
+                📞 Direct Line: +91 98765 43210
+              </div>
+              <div style="font-size:0.85rem; color:var(--color-text-light); margin-top:4px;">
+                ✉ reservations@cferestaurant.example.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE
+            Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and
+          bespoke dining.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="menu.html" class="footer-link">Full Menu</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Daily Lunch:</span>
+            <strong>11:30 AM – 03:30 PM</strong>
+          </div>
+          <div class="footer-hours-item">
+            <span>Daily Dinner:</span>
+            <strong>07:00 PM – 11:30 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Demonstration Notice</h4>
+        <p style="font-size:0.82rem; color:rgba(255, 255, 255, 0.6); line-height:1.6;">
+          This reservation interface is designed as an interactive frontend showcase. No actual reservations are sent to
+          a live restaurant database.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Table Reservation Module</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/reservation.js"></script>
+</body>
+
+</html>

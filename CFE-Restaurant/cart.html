@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFE Restaurant Shopping Cart - Review your selected gourmet items, apply promotional discounts, and complete your demonstration dining order.">
+  <title>Shopping Cart | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link active">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       SHOPPING CART CONTENT
+       ======================================================================== -->
+  <main>
+    <section class="section" style="padding-top:50px;">
+      <div class="container">
+        <!-- Breadcrumb & Header -->
+        <div style="margin-bottom:30px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="section-tag" style="margin-bottom:8px;">Gourmet Order Selection</span>
+            <h1>Your Shopping Cart</h1>
+            <p style="color:var(--color-text-muted); font-size:0.95rem;">
+              Review your culinary feast, adjust quantities, or apply royal privilege codes.
+            </p>
+          </div>
+          <div style="font-size:0.92rem; color:var(--color-primary); font-weight:700;" id="cartTotalCountText">
+            0 items
+          </div>
+        </div>
+
+        <!-- Empty Cart State -->
+        <div class="empty-state" id="cartEmptyState" style="display:none;">
+          <div class="empty-state-icon">🛒</div>
+          <h2 class="empty-state-title">Your Culinary Cart is Empty</h2>
+          <p class="empty-state-desc">
+            You haven't added any dishes yet. Indulge in our slow-cooked Dum Biryanis, wood-fired sourdough pizzas, or royal tandoor delights.
+          </p>
+          <a href="menu.html" class="btn btn-gold btn-lg">Explore Gourmet Menu</a>
+        </div>
+
+        <!-- Active Cart Layout (Grid: Table + Summary) -->
+        <div class="cart-layout" id="cartLayout">
+          <!-- Left: Items Table Card -->
+          <div class="cart-table-card">
+            <div style="overflow-x:auto;">
+              <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th>Dish Details</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th style="text-align:right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                  <!-- Dynamically populated by js/cart.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding-top:20px; border-top:1px solid var(--color-border); flex-wrap:wrap; gap:16px;">
+              <a href="menu.html" class="btn btn-outline" style="gap:8px;">
+                &larr; Continue Shopping
+              </a>
+              <button class="btn btn-outline-gold" id="clearCartBtn" style="color:var(--color-danger); border-color:var(--color-danger);">
+                Clear Entire Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Summary Card -->
+          <aside class="cart-summary-card">
+            <h2 class="cart-summary-title">Order Summary</h2>
+
+            <div class="summary-row">
+              <span>Items Subtotal:</span>
+              <strong id="cartSubtotal">₹0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>GST &amp; Restaurant Tax (5%):</span>
+              <strong id="cartTax">₹0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Delivery / Dine Packaging:</span>
+              <strong id="cartDelivery">₹0</strong>
+            </div>
+
+            <!-- Discount Row (Hidden if no promo) -->
+            <div class="summary-row" id="cartDiscountRow" style="display:none; color:var(--color-success);">
+              <span>Privilege Discount:</span>
+              <strong id="cartDiscount">-₹0</strong>
+            </div>
+
+            <!-- Promo Code Section -->
+            <div style="margin:20px 0;">
+              <label class="form-label" style="font-size:0.8rem;">Promotional Privilege Code</label>
+              <div class="promo-code-box">
+                <input type="text" id="promoCodeInput" class="promo-input" placeholder="Try CFE10 or ROYAL100">
+                <button class="btn btn-primary btn-sm" id="applyPromoBtn">Apply</button>
+              </div>
+              <span style="font-size:0.75rem; color:var(--color-text-light);">Use <strong>CFE10</strong> for 10% off your gourmet order.</span>
+            </div>
+
+            <!-- Grand Total -->
+            <div class="summary-row total">
+              <span>Total Payable:</span>
+              <span id="cartGrandTotal" style="color:var(--color-primary-dark);">₹0</span>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="btn btn-gold btn-lg" id="proceedCheckoutBtn" style="width:100%; margin-top:24px;">
+              Proceed to Checkout
+            </button>
+
+            <!-- Demo Note -->
+            <div style="margin-top:18px; text-align:center; font-size:0.76rem; color:var(--color-text-light); line-height:1.5;">
+              🔒 <strong>Safe Frontend Demo:</strong> All calculations, discounts, and order confirmations work in-browser without actual payments.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and bespoke dining.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="menu.html" class="footer-link">Full Menu</a>
+          <a href="reservation.html" class="footer-link">Reserve a Table</a>
+          <a href="profile.html" class="footer-link">Your Profile</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Opening Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Daily:</span>
+            <strong>11:30 AM – 11:30 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Direct Assistance</h4>
+        <div style="font-size:0.88rem; color:rgba(255, 255, 255, 0.75);">
+          <p>For custom catering or group reservations:</p>
+          <p style="color:var(--color-accent-light); font-weight:700; margin-top:6px;">+91 98765 43210</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Shopping Cart Engine</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sugar Sprinkles Cafe - Your cozy corner for handcrafted coffee, freshly baked artisanal pastries, and delightful sweet moments.">
+  <title>Sugar Sprinkles Cafe | Brewed with Love, Sprinkled with Joy</title>
+
+  
+  <!-- Google Fonts: Playfair Display (Elegant Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/sugar-sprinkles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       STICKY NAVIGATION BAR (SMOOTH HOVER ANIMATIONS)
+       ======================================================================== -->
+  <header class="site-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-wrap">
+        <div class="brand-cup">☕</div>
+        <div class="brand-titles">
+          <span class="brand-name">Sugar Sprinkles Cafe</span>
+          <span class="brand-tagline">Artisan Brews &amp; Bakery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links with Slide-Underline Animation -->
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-item active">Home</a>
+        <a href="#menu" class="nav-item">Our Menu</a>
+        <a href="#story" class="nav-item">Our Story</a>
+        <a href="#specials" class="nav-item">Sweet Treats</a>
+        <a href="homepage.html" class="nav-item">VIP Club ✨</a>
+        <a href="#reviews" class="nav-item">Reviews</a>
+        <a href="#contact" class="nav-item">Visit Us</a>
+      </nav>
+
+      <!-- Nav Actions (Cart, Glassmorphic Auth Trigger, Mobile Hamburger) -->
+      <div class="nav-right">
+        <!-- Cart Trigger Button -->
+        <button class="cart-btn" id="openCartDrawerBtn" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-counter" id="cartBadgeCount">0</span>
+        </button>
+
+        <!-- Glassmorphism Auth Modal Trigger Button -->
+        <button class="btn btn-pink btn-sm" id="openAuthModalBtn">
+          <span>✨</span> Sign In
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION (FULL-WIDTH COFFEE + SPRINKLES THEME)
+       ======================================================================== -->
+  <main>
+    <section class="hero-sugar" id="hero">
+      <div class="hero-sprinkles-overlay"></div>
+      
+      <div class="container hero-layout">
+        <!-- Hero Text & CTAs -->
+        <div class="hero-copy anim-slide-left">
+          <div class="hero-pill-badge">
+            <span>✨</span> A LITTLE SWEETNESS, EVERY DAY
+          </div>
+          <h1 class="hero-title">
+            Brewed with Love, <span>Sprinkled with Joy.</span>
+          </h1>
+          <p class="hero-desc">
+            Welcome to Sugar Sprinkles Cafe, your cozy sanctuary for velvety hazelnut lattes, warm chocolate gateaus, and savory sourdough delicacies made fresh every morning.
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-pink btn-lg">Explore Our Sweet Menu</a>
+            <button class="btn btn-outline-white btn-lg" onclick="openGlassModal()">Join Cafe Rewards</button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-showcase anim-slide-right">
+          <div class="hero-frame">
+            <img src="sugar_sprinkles_hero.jpg" alt="Artisan Coffee & Sprinkles at Sugar Sprinkles Cafe">
+          </div>
+          <div class="hero-float-badge">
+            <div class="float-badge-icon">🧁</div>
+            <div>
+              <div style="font-weight:700; font-size:0.92rem; color:var(--c-brown-dark);">Fresh Baked Daily</div>
+              <div style="font-size:0.75rem; color:var(--c-text-muted);">Over 1,200+ Happy Morning Sips</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MENU SHOWCASE GRID WITH ZOOM HOVER EFFECTS
+         ======================================================================== -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head anim-reveal">
+          <span class="eyebrow-tag">Handcrafted With Passion</span>
+          <h2>Our Delightful Menu Showcase</h2>
+          <p class="section-sub">
+            From single-origin roasts to decadent red velvet layers and warm wood-fired sourdough pizzas.
+          </p>
+        </div>
+
+        <!-- Menu Filter Toolbar & Search -->
+        <div class="menu-toolbar anim-reveal">
+          <!-- Search Bar -->
+          <div class="menu-search-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="sugarMenuSearch" class="menu-search-input" placeholder="Search coffee, pastries, red velvet, pizza, sandwiches...">
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="category-filter-list" role="tablist">
+            <button class="category-btn active" data-category="All">All Delights</button>
+            <button class="category-btn" data-category="Specialty Coffee">Specialty Coffee</button>
+            <button class="category-btn" data-category="Cakes &amp; Pastries">Cakes &amp; Pastries</button>
+            <button class="category-btn" data-category="Savory Bites">Savory Bites</button>
+            <button class="category-btn" data-category="Cold Drinks">Cold Drinks</button>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid (Slight Zoom / 3D Lift on Hover) -->
+        <div class="menu-grid" id="sugarMenuGrid">
+          <!-- Populated dynamically by js/sugar-sprinkles.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SWEET TREATS SPOTLIGHT
+         ======================================================================== -->
+    <section class="section section-alt" id="specials">
+      <div class="container">
+        <div class="section-head anim-reveal">
+          <span class="eyebrow-tag">Signature Flavors</span>
+          <h2>Why You'll Fall in Love With Us</h2>
+          <p class="section-sub">
+            Every cup and crumb is a harmonious balance of rich cocoa, farm milk, and golden honey.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:28px;">
+          <!-- Card 1 -->
+          <div class="anim-reveal" style="background:#fff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--c-border); box-shadow:var(--shadow-sm); text-align:center;">
+            <div style="width:58px; height:58px; border-radius:50%; background:var(--c-pink-soft); color:var(--c-pink-accent); font-size:1.8rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">☕</div>
+            <h3 style="font-size:1.25rem; margin-bottom:8px;">Single-Origin Arabica</h3>
+            <p style="color:var(--c-text-muted); font-size:0.88rem; line-height:1.65;">
+              Slow-dripped Arabica beans roasted to chocolatey perfection, poured with velvety frothed milk and hazelnut swirl.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="anim-reveal" style="background:#fff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--c-border); box-shadow:var(--shadow-sm); text-align:center;">
+            <div style="width:58px; height:58px; border-radius:50%; background:var(--c-pink-soft); color:var(--c-pink-accent); font-size:1.8rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">🧁</div>
+            <h3 style="font-size:1.25rem; margin-bottom:8px;">Fresh Baked Pastries</h3>
+            <p style="color:var(--c-text-muted); font-size:0.88rem; line-height:1.65;">
+              From our famous red velvet sponge to rich Belgian molten lava cakes, prepared daily using cultured butter and pure cocoa.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="anim-reveal" style="background:#fff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--c-border); box-shadow:var(--shadow-sm); text-align:center;">
+            <div style="width:58px; height:58px; border-radius:50%; background:var(--c-pink-soft); color:var(--c-pink-accent); font-size:1.8rem; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">🍕</div>
+            <h3 style="font-size:1.25rem; margin-bottom:8px;">Sourdough Savories</h3>
+            <p style="color:var(--c-text-muted); font-size:0.88rem; line-height:1.65;">
+              Hand-stretched sourdough pizzas, crispy jalapeño poppers, and pesto bocconcini sandwiches for your savory cravings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         OUR STORY SECTION
+         ======================================================================== -->
+    <section class="section" id="story">
+      <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+        <div class="anim-slide-left">
+          <span class="eyebrow-tag">A Cozy Corner</span>
+          <h2 style="margin-bottom:18px;">The Sugar Sprinkles Journey</h2>
+          <p style="color:var(--c-text-muted); line-height:1.75; margin-bottom:16px;">
+            Sugar Sprinkles Cafe began as a humble dream: to build a warm gathering place where the comforting smell of roasted coffee beans meets sweet pastries decorated with colorful sprinkles.
+          </p>
+          <p style="color:var(--c-text-muted); line-height:1.75; margin-bottom:24px;">
+            Whether you're catching up with dear friends, getting lost in your favorite book, or celebrating an afternoon with a slice of cake, our welcoming baristas are here to brighten your day.
+          </p>
+          <div style="display:flex; gap:20px;">
+            <div>
+              <strong style="display:block; font-family:var(--font-serif); font-size:2rem; color:var(--c-pink-accent);">100%</strong>
+              <span style="font-size:0.85rem; color:var(--c-text-muted);">Fresh Ingredients</span>
+            </div>
+            <div style="border-left:1px solid var(--c-border); padding-left:20px;">
+              <strong style="display:block; font-family:var(--font-serif); font-size:2rem; color:var(--c-gold);">8+</strong>
+              <span style="font-size:0.85rem; color:var(--c-text-muted);">Signature Delights</span>
+            </div>
+            <div style="border-left:1px solid var(--c-border); padding-left:20px;">
+              <strong style="display:block; font-family:var(--font-serif); font-size:2rem; color:var(--c-brown-dark);">4.9 ★</strong>
+              <span style="font-size:0.85rem; color:var(--c-text-muted);">Customer Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="anim-slide-right" style="position:relative;">
+          <div style="border-radius:28px; overflow:hidden; box-shadow:var(--shadow-lg); border:2px solid var(--c-border);">
+            <img src="ramyacafe.jpeg" alt="Sugar Sprinkles Cafe Ambience" style="width:100%; height:380px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CUSTOMER REVIEWS
+         ======================================================================== -->
+    <section class="section section-alt" id="reviews">
+      <div class="container">
+        <div class="section-head anim-reveal">
+          <span class="eyebrow-tag">Sweet Smiles</span>
+          <h2>Loved by Our Cafe Patrons</h2>
+          <p class="section-sub">Real words from our daily coffee lovers and dessert enthusiasts.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:26px;">
+          <div style="background:#fff; padding:28px; border-radius:var(--radius-md); border:1px solid var(--c-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--c-gold); margin-bottom:10px;">★★★★★</div>
+            <p style="font-style:italic; color:var(--c-text-muted); font-size:0.92rem; line-height:1.65; margin-bottom:16px;">
+              "The Red Velvet pastry and hazelnut brew are perfection. It has become my go-to cozy space for remote work and sweet coffee dates."
+            </p>
+            <strong style="color:var(--c-brown-dark); font-size:0.92rem; display:block;">Manu</strong>
+            <span style="font-size:0.78rem; color:var(--c-pink-deep);">Daily Coffee Enthusiast</span>
+          </div>
+
+          <div style="background:#fff; padding:28px; border-radius:var(--radius-md); border:1px solid var(--c-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--c-gold); margin-bottom:10px;">★★★★★</div>
+            <p style="font-style:italic; color:var(--c-text-muted); font-size:0.92rem; line-height:1.65; margin-bottom:16px;">
+              "Their wood-fired pizza and chocolate cake are incredible. The pastel pink aesthetics and glassmorphism interface are stunning!"
+            </p>
+            <strong style="color:var(--c-brown-dark); font-size:0.92rem; display:block;">Nithyashree</strong>
+            <span style="font-size:0.78rem; color:var(--c-pink-deep);">Pastry &amp; Pizza Lover</span>
+          </div>
+           <div style="background:#fff; padding:28px; border-radius:var(--radius-md); border:1px solid var(--c-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--c-gold); margin-bottom:10px;">★★★★★</div>
+            <p style="font-style:italic; color:var(--c-text-muted); font-size:0.92rem; line-height:1.65; margin-bottom:16px;">
+              "The perfect spot for a cozy coffee date. The lavender latte and blueberry scones are to die for!"
+            </p>
+            <strong style="color:var(--c-brown-dark); font-size:0.92rem; display:block;">Ayushi</strong>
+            <span style="font-size:0.78rem; color:var(--c-pink-deep);">Pastry &amp; Snack Enthusiast</span>
+          </div>
+      
+          <div style="background:#fff; padding:28px; border-radius:var(--radius-md); border:1px solid var(--c-border); box-shadow:var(--shadow-sm);">
+            <div style="color:var(--c-gold); margin-bottom:10px;">★★★★★</div>
+            <p style="font-style:italic; color:var(--c-text-muted); font-size:0.92rem; line-height:1.65; margin-bottom:16px;">
+              "Friendly baristas, sweet sprinkles in every detail, and the best cheese poppers in town. Highly recommended!"
+            </p>
+            <strong style="color:var(--c-brown-dark); font-size:0.92rem; display:block;">Avni</strong>
+            <span style="font-size:0.78rem; color:var(--c-pink-deep);">Loyal Customer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       GLASSMORPHISM LOGIN / REGISTRATION MODAL
+       ======================================================================== -->
+  <div class="glass-modal-overlay" id="glassAuthModal">
+    <div class="glass-modal-card">
+      <button class="glass-modal-close" id="closeGlassModalBtn" aria-label="Close modal">&times;</button>
+
+      <!-- Modal Heading -->
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--c-pink-soft); color:var(--c-pink-accent); font-size:1.4rem; display:flex; align-items:center; justify-content:center; margin:0 auto 10px;">✨</div>
+        <h2 id="glassModalTitle" style="font-size:1.6rem; margin-bottom:4px; color:var(--c-brown-dark);">Welcome to Sugar Sprinkles</h2>
+        <p id="glassModalSub" style="font-size:0.86rem; color:var(--c-text-muted);">Sign in for sweet treats and cafe privileges.</p>
+      </div>
+
+      <!-- Segmented Tabs -->
+      <div class="glass-tabs">
+        <button type="button" class="glass-tab-btn active" id="glassTabLogin">Sign In</button>
+        <button type="button" class="glass-tab-btn" id="glassTabRegister">Create Account</button>
+      </div>
+
+      <!-- 1-Click Demo Guest Sign-In -->
+      <div class="glass-quick-demo">
+        <div>
+          <strong>Fast Demo Evaluation</strong>
+          <span>Instant 1-click test sign in</span>
+        </div>
+        <button type="button" class="btn btn-pink btn-sm" id="glassQuickDemoBtn">
+          ⚡ 1-Click Demo
+        </button>
+      </div>
+
+      <!-- Form 1: Sign In -->
+      <form id="glassLoginForm">
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassLoginEmail">Email Address</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">✉</span>
+            <input type="email" id="glassLoginEmail" class="glass-input" placeholder="you@example.com" value="sweet@sugarsprinkles.com" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassLoginPassword">Password</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">🔒</span>
+            <input type="password" id="glassLoginPassword" class="glass-input" placeholder="Enter password" value="sprinkles123" required>
+            <button type="button" class="glass-pwd-toggle" data-target="glassLoginPassword">👁</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">
+          Sign In to Cafe
+        </button>
+      </form>
+
+      <!-- Form 2: Create Account -->
+      <form id="glassRegisterForm" style="display:none;">
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegName">Your Name</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">👤</span>
+            <input type="text" id="glassRegName" class="glass-input" placeholder="How should we greet you?" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegEmail">Email Address</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">✉</span>
+            <input type="email" id="glassRegEmail" class="glass-input" placeholder="you@domain.com" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegPassword">Create Password</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">🔒</span>
+            <input type="password" id="glassRegPassword" class="glass-input" placeholder="At least 6 characters" required>
+            <button type="button" class="glass-pwd-toggle" data-target="glassRegPassword">👁</button>
+          </div>
+          <div class="glass-strength-meter">
+            <div class="glass-strength-bar" id="glassStrengthBar"></div>
+          </div>
+          <div class="glass-strength-text" id="glassStrengthText"></div>
+        </div>
+
+        <button type="submit" class="btn btn-pink" style="width:100%; margin-top:10px;">
+          Create My Sweet Account
+        </button>
+      </form>
+
+      <div style="font-size:0.75rem; text-align:center; color:var(--c-text-muted); margin-top:18px;">
+        🔒 Demo Session: Stored in browser localStorage. No real credentials transmitted.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SLIDING SHOPPING CART DRAWER
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-head">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem;">🧁</span>
+        <h3 style="margin:0; font-size:1.25rem;">Your Sweet Bag</h3>
+      </div>
+      <button id="closeCartDrawerBtn" style="font-size:1.5rem; color:var(--c-text-muted); cursor:pointer;">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerItems">
+      <!-- Populated by js/sugar-sprinkles.js -->
+    </div>
+
+    <div class="cart-drawer-foot">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <span style="font-weight:600; color:var(--c-text-muted);">Total Amount:</span>
+        <strong id="cartDrawerTotal" style="font-size:1.4rem; color:var(--c-brown-dark); font-family:var(--font-serif);">₹0</strong>
+      </div>
+      <button class="btn btn-pink" id="sugarCheckoutBtn" style="width:100%; margin-bottom:10px;">
+        Complete Demo Order
+      </button>
+      <button class="btn btn-outline" id="clearSugarCartBtn" style="width:100%; font-size:0.82rem; padding:8px;">
+        Clear Bag
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       FOOTER (WARM BROWNS & PASTEL DETAILS)
+       ======================================================================== -->
+  <footer class="site-foot" id="contact">
+    <div class="container foot-grid">
+      <!-- Brand & Mission -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <div class="brand-cup" style="width:36px; height:36px; font-size:1rem;">☕</div>
+          <span style="font-family:var(--font-serif); font-size:1.35rem; font-weight:800; color:#ffffff;">Sugar Sprinkles</span>
+        </div>
+        <p style="font-size:0.88rem; color:rgba(255, 255, 255, 0.7); line-height:1.7;">
+          Crafted with passion by Nithyashree,Manu, Avni & Ayushi
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="foot-title">Explore</h4>
+        <a href="#hero" class="foot-link">Home</a>
+        <a href="menupage.html" class="foot-link">Artisan Menu</a>
+        <a href="#story" class="foot-link">Our Story</a>
+        <a href="homepage.html" class="foot-link">VIP Lounge</a>
+      </div>
+
+      <!-- Opening Hours -->
+      <div>
+        <h4 class="foot-title">Cafe Hours</h4>
+        <p style="font-size:0.86rem; color:rgba(255, 255, 255, 0.75); line-height:1.6;">
+          Mon – Fri: 08:00 AM – 10:00 PM<br>
+          Sat – Sun: 08:30 AM – 11:00 PM<br>
+          Afternoon Tea: 03:30 PM – 06:00 PM
+        </p>
+      </div>
+
+      <!-- Location & Contact -->
+      <div>
+        <h4 class="foot-title">Visit Us</h4>
+        <p style="font-size:0.86rem; color:rgba(255, 255, 255, 0.75); line-height:1.6;">
+          📍 12 Sugar Sprinkles Lane, RR Nagar, Bengaluru<br>
+          📞 +91 9535863655<br>
+          ✉ Nithyashree@gmail.com
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="border-top:1px solid rgba(255, 255, 255, 0.1); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:rgba(255, 255, 255, 0.5);">
+      <div>&copy; 2026 Sugar Sprinkles Cafe. All rights reserved.</div>
+      <div>Crafted with Warm Browns, Creamy Whites, Pastel Pinks &amp; Gold ✨</div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript File -->
+  <script src="js/sugar-sprinkles.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFE Restaurant Member Profile - Manage your personal details, avatar photo, past orders, and table reservation passes.">
+  <title>User Profile | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+      <a href="profile.html" class="mobile-nav-link active">Profile</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       USER PROFILE CONTENT
+       ======================================================================== -->
+  <main>
+    <section class="section" style="padding-top:45px;">
+      <div class="container">
+        <!-- Banner Title -->
+        <div style="margin-bottom:35px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="section-tag" style="margin-bottom:8px;">Member Dashboard</span>
+            <h1>Guest Epicurean Profile</h1>
+          </div>
+          <div style="display:flex; gap:12px;">
+            <button class="btn btn-outline-gold" id="toggleEditBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              Edit Profile
+            </button>
+            <button class="btn btn-outline" id="profileLogoutBtn" style="color:var(--color-danger); border-color:var(--color-danger);">
+              Sign Out
+            </button>
+          </div>
+        </div>
+
+        <!-- Demonstration Notice Banner -->
+        <div class="demo-badge-banner" style="margin-bottom:30px;">
+          <span>ℹ</span>
+          <span><strong>Client-Side Storage Demonstration:</strong> Edits to your profile, avatar photo uploads, and demo orders are maintained locally via browser localStorage. No sensitive passwords or backend tokens are stored.</span>
+        </div>
+
+        <div class="profile-grid">
+          <!-- LEFT: Profile Identity Card -->
+          <aside class="profile-card">
+            <div class="profile-avatar-wrap">
+              <img src="assets/images/coffeee.jpeg" alt="User Profile Photo" id="profileAvatarImg" class="profile-avatar-img">
+              <button class="profile-photo-change-btn" id="changeAvatarBtn" title="Upload / Change Avatar Photo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </button>
+              <input type="file" id="avatarFileInput" accept="image/*" style="display:none;">
+            </div>
+
+            <h2 class="profile-name" id="profileNameDisplay">Chef Ananya Sharma</h2>
+            <div class="profile-username" id="profileUsernameDisplay">@ananya_gourmet</div>
+            <div class="section-tag" style="margin-bottom:16px;">CFE Royal Club Member</div>
+
+            <p class="profile-bio" id="profileBioDisplay">
+              Epicurean food lover with an appreciation for authentic Indian spices, artisan sourdough, and slow-drip roasts.
+            </p>
+
+            <div class="profile-meta-list">
+              <div class="profile-meta-item">
+                <span>✉ Email:</span>
+                <span id="profileEmailDisplay">ananya.sharma@example.com</span>
+              </div>
+              <div class="profile-meta-item">
+                <span>📞 Phone:</span>
+                <span id="profilePhoneDisplay">+91 98451 23456</span>
+              </div>
+              <div class="profile-meta-item">
+                <span>📍 Location:</span>
+                <span id="profileLocationDisplay">Indiranagar, Bengaluru, India</span>
+              </div>
+              <div class="profile-meta-item">
+                <span>📅 Member Since:</span>
+                <span id="profileMemberSince">October 2026</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- RIGHT: Main Content (Tabs & Edit Mode) -->
+          <div class="profile-main-card">
+            <!-- View Section (Default) -->
+            <div id="profileViewSection">
+              <!-- Tabs Navigation -->
+              <div class="profile-tabs" role="tablist">
+                <button class="profile-tab active" data-target="tabOverview">Dining Overview</button>
+                <button class="profile-tab" data-target="tabPastOrders">Demo Past Orders</button>
+                <button class="profile-tab" data-target="tabReservations">Table Reservations</button>
+              </div>
+
+              <!-- Tab 1: Overview -->
+              <div class="tab-pane" id="tabOverview">
+                <h3 style="margin-bottom:14px; font-size:1.3rem;">Epicurean Membership Privileges</h3>
+                <p style="color:var(--color-text-muted); font-size:0.92rem; line-height:1.7; margin-bottom:24px;">
+                  As a valued CFE Restaurant member, you enjoy priority table bookings during peak weekend hours, complimentary chef greetings, and seasonal preview invites for our quarterly tasting menus.
+                </p>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:18px; margin-bottom:30px;">
+                  <div style="background:var(--color-bg); padding:20px; border-radius:var(--radius-md); border:1px solid var(--color-border); text-align:center;">
+                    <div style="font-size:1.8rem; color:var(--color-accent); margin-bottom:6px;">✦</div>
+                    <strong style="color:var(--color-primary-dark); display:block; font-size:1.05rem;">Gold Status</strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted);">Priority Table Access</span>
+                  </div>
+                  <div style="background:var(--color-bg); padding:20px; border-radius:var(--radius-md); border:1px solid var(--color-border); text-align:center;">
+                    <div style="font-size:1.8rem; color:var(--color-accent); margin-bottom:6px;">🍷</div>
+                    <strong style="color:var(--color-primary-dark); display:block; font-size:1.05rem;">Complimentary</strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted);">Welcome Mocktail Sip</span>
+                  </div>
+                  <div style="background:var(--color-bg); padding:20px; border-radius:var(--radius-md); border:1px solid var(--color-border); text-align:center;">
+                    <div style="font-size:1.8rem; color:var(--color-accent); margin-bottom:6px;">🎁</div>
+                    <strong style="color:var(--color-primary-dark); display:block; font-size:1.05rem;">Birthday Treat</strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted);">Gourmet Cake on Us</span>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                  <a href="menu.html" class="btn btn-primary">Order Gourmet Dishes</a>
+                  <a href="reservation.html" class="btn btn-gold">Reserve Evening Table</a>
+                </div>
+              </div>
+
+              <!-- Tab 2: Past Orders -->
+              <div class="tab-pane" id="tabPastOrders" style="display:none;">
+                <h3 style="margin-bottom:14px; font-size:1.3rem;">Recent Demo Orders</h3>
+                <p style="color:var(--color-text-muted); font-size:0.88rem; margin-bottom:20px;">
+                  Orders placed through the frontend shopping cart during this browser session.
+                </p>
+                <div id="pastOrdersContainer">
+                  <!-- Populated by js/profile.js -->
+                </div>
+              </div>
+
+              <!-- Tab 3: Table Reservations -->
+              <div class="tab-pane" id="tabReservations" style="display:none;">
+                <h3 style="margin-bottom:14px; font-size:1.3rem;">Upcoming Table Bookings</h3>
+                <p style="color:var(--color-text-muted); font-size:0.88rem; margin-bottom:20px;">
+                  Demonstration reservation requests created via the booking page.
+                </p>
+                <div id="profileReservationsContainer">
+                  <!-- Populated by js/profile.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Edit Section (Shown when clicking Edit Profile) -->
+            <div id="profileEditSection" style="display:none;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--color-border);">
+                <div>
+                  <h2 style="font-size:1.4rem;">Edit Your Profile</h2>
+                  <p style="color:var(--color-text-muted); font-size:0.88rem;">Update personal details and manage your avatar photo.</p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" id="cancelEditBtn">Cancel</button>
+              </div>
+
+              <form id="profileEditForm">
+                <!-- Avatar Preview & Actions in Edit Mode -->
+                <div class="avatar-upload-box" style="margin-bottom:24px;">
+                  <img src="assets/images/coffeee.jpeg" alt="Avatar in Edit Mode" id="editAvatarPreview" class="avatar-preview-img">
+                  <div class="avatar-upload-info">
+                    <strong style="display:block; font-size:0.9rem; margin-bottom:4px;">Profile Photo Options</strong>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                      <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('avatarFileInput').click()">
+                        Upload New Photo
+                      </button>
+                      <button type="button" class="btn btn-outline btn-sm" id="removeAvatarBtn" style="color:var(--color-danger); border-color:var(--color-danger);">
+                        Remove Photo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Name & Username -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                  <div class="form-group">
+                    <label class="form-label" for="editFullName">Full Name *</label>
+                    <input type="text" id="editFullName" class="form-control no-icon" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="editUsername">Username *</label>
+                    <input type="text" id="editUsername" class="form-control no-icon" required>
+                  </div>
+                </div>
+
+                <!-- Email & Phone -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                  <div class="form-group">
+                    <label class="form-label" for="editEmail">Email Address *</label>
+                    <input type="email" id="editEmail" class="form-control no-icon" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="editPhone">Mobile Number</label>
+                    <input type="tel" id="editPhone" class="form-control no-icon">
+                  </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="form-group">
+                  <label class="form-label" for="editBio">Bio / Food Preferences</label>
+                  <textarea id="editBio" class="form-control no-icon" rows="3" style="resize:vertical;"></textarea>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group">
+                  <label class="form-label" for="editLocation">Location / City</label>
+                  <input type="text" id="editLocation" class="form-control no-icon">
+                </div>
+
+                <!-- Form Buttons -->
+                <div style="display:flex; gap:14px; margin-top:28px;">
+                  <button type="submit" class="btn btn-gold btn-lg">Save Changes</button>
+                  <button type="button" class="btn btn-outline btn-lg" onclick="document.getElementById('cancelEditBtn').click()">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:none; padding:20px 0;">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Epicurean Profile Dashboard</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

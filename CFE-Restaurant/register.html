@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your CFE Restaurant account to enjoy exclusive epicurean membership privileges, fast table bookings, and tasting menu previews.">
+  <title>Create Account | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PRO UI SPLIT-SCREEN REGISTRATION SUITE
+       ======================================================================== -->
+  <main class="auth-wrapper">
+    <div class="auth-split-card" style="max-width:1150px;">
+      <!-- LEFT COLUMN: LUXURY BRAND & PRIVILEGES SHOWCASE -->
+      <section class="auth-showcase-panel">
+        <div class="auth-showcase-glow"></div>
+        
+        <div>
+          <!-- Brand Badge -->
+          <div class="auth-brand-badge">
+            <div class="brand-emblem" style="width:48px; height:48px; font-size:1.3rem;">CFE</div>
+            <div>
+              <div style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; letter-spacing:0.04em;">CFE Restaurant</div>
+              <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-accent-light);">Epicurean Membership</div>
+            </div>
+          </div>
+
+          <!-- Chef Quote -->
+          <div class="auth-showcase-quote">
+            <p class="auth-quote-text">
+              "Every plate is crafted with stone-ground spices and organic harvest from our family of local growers."
+            </p>
+            <div class="auth-quote-author">— Executive Chef Vikram Rathore</div>
+          </div>
+
+          <!-- Membership Privileges List -->
+          <div class="auth-privileges-box">
+            <div class="auth-privileges-title">
+              <span>✦</span> Included With Membership
+            </div>
+            
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Priority Weekend Table Bookings</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Bypass waiting lists with guaranteed dining reservations.</div>
+              </div>
+            </div>
+
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Seasonal Tasting Previews</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Exclusive invitations to preview our 8-category menus.</div>
+              </div>
+            </div>
+
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Anniversary &amp; Birthday Surprises</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Complimentary bespoke dessert platters on your special day.</div>
+              </div>
+            </div>
+
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Dining Concierge Desk</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Direct phone line for private dining and sommelier pairings.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accolade Footer -->
+        <div class="auth-showcase-footer">
+          <span>★ Recognized for Exceptional Gastronomy 2026</span>
+          <span style="color:var(--color-accent-light);">Bengaluru, India</span>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: PROFESSIONAL REGISTRATION FORM -->
+      <section class="auth-form-panel">
+        <!-- Top Back Nav -->
+        <div class="auth-top-nav">
+          <a href="index.html" class="auth-back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Home
+          </a>
+          <span style="font-size:0.84rem; color:var(--color-text-muted);">
+            Existing member? <a href="login.html" style="color:var(--color-accent-dark); font-weight:700;">Sign In</a>
+          </span>
+        </div>
+
+        <!-- Segmented Tab Switcher -->
+        <nav class="auth-tabs-nav" aria-label="Authentication Switcher">
+          <a href="login.html" class="auth-tab-link">Sign In</a>
+          <a href="register.html" class="auth-tab-link active">Create Account</a>
+        </nav>
+
+        <!-- Header -->
+        <div style="margin-bottom:20px;">
+          <h1 style="font-size:1.95rem; margin-bottom:6px; color:var(--color-primary-dark);">Join the Society</h1>
+          <p style="color:var(--color-text-muted); font-size:0.9rem;">
+            Create your profile to personalize your dining journey and reserve prime tables.
+          </p>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="registerForm" novalidate>
+          <!-- Modern Circular Profile Photo Picker -->
+          <div class="avatar-circle-picker">
+            <div class="avatar-circle-preview">
+              <img src="assets/images/coffeee.jpeg" alt="Avatar Preview" id="regAvatarPreview" class="avatar-circle-img">
+            </div>
+            <div class="avatar-picker-controls">
+              <strong>Profile Photo (Optional)</strong>
+              <div style="font-size:0.78rem; color:var(--color-text-muted); margin-bottom:8px;">
+                Personalize your member profile card with an avatar.
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input type="file" id="regAvatarInput" accept="image/*" style="display:none;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('regAvatarInput').click()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  Upload Photo
+                </button>
+                <button type="button" class="btn btn-sm" id="regAvatarResetBtn" style="font-size:0.75rem; color:var(--color-danger); padding:4px 8px; display:none;">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Name & Username in 2 Columns -->
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+            <div class="form-group">
+              <label class="form-label" for="regName">Full Name *</label>
+              <div class="input-with-icon">
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
+                <input type="text" id="regName" class="form-control" placeholder="e.g. Ananya Sharma" required autocomplete="name">
+              </div>
+              <span class="form-error" id="regNameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="regUsername">Username *</label>
+              <div class="input-with-icon">
+                <span class="input-icon" style="font-weight:700; color:var(--color-text-light);">@</span>
+                <input type="text" id="regUsername" class="form-control" placeholder="ananya_gourmet" required autocomplete="username">
+              </div>
+              <span class="form-error" id="regUsernameError"></span>
+            </div>
+          </div>
+
+          <!-- Email & Phone in 2 Columns -->
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address *</label>
+              <div class="input-with-icon">
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                <input type="email" id="regEmail" class="form-control" placeholder="name@domain.com" required autocomplete="email">
+              </div>
+              <span class="form-error" id="regEmailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="regPhone">Mobile Number *</label>
+              <div class="input-with-icon">
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <input type="tel" id="regPhone" class="form-control" placeholder="10-digit mobile number" required autocomplete="tel">
+              </div>
+              <span class="form-error" id="regPhoneError"></span>
+            </div>
+          </div>
+
+          <!-- Password & Strength -->
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Password *</label>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="regPassword" class="form-control" placeholder="Minimum 6 characters" required autocomplete="new-password">
+              <button type="button" class="password-toggle-btn" data-target="regPassword" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            
+            <!-- Animated Strength Bar -->
+            <div class="strength-meter">
+              <div class="strength-bar" id="strengthBar"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="strength-text" id="strengthText"></div>
+            </div>
+
+            <!-- Password Requirements Checklist -->
+            <div class="password-req-grid" id="pwdReqGrid">
+              <span class="password-req-item" id="reqLength">At least 6 characters</span>
+              <span class="password-req-item" id="reqNumber">At least 1 number</span>
+              <span class="password-req-item" id="reqUpper">Uppercase letter</span>
+              <span class="password-req-item" id="reqSymbol">Special character</span>
+            </div>
+            <span class="form-error" id="regPasswordError"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label class="form-label" for="regConfirmPassword">Confirm Password *</label>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-enter password to confirm" required autocomplete="new-password">
+              <button type="button" class="password-toggle-btn" data-target="regConfirmPassword" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="form-error" id="regConfirmError"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-gold btn-lg" style="width:100%; margin-top:8px; gap:8px;">
+            <span>Create CFE Member Account</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <!-- Sandbox Security Note -->
+        <div style="margin-top:20px; padding:12px; background:var(--color-bg); border-radius:var(--radius-sm); border:1px solid var(--color-border); font-size:0.78rem; color:var(--color-text-muted); text-align:center;">
+          🔒 <strong>Frontend Demonstration:</strong> Profile details are stored in your browser's localStorage for demonstration purposes. No actual backend transmission.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:none; padding:20px 0;">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved. Commercial Frontend Demonstration.</div>
+      <div>Designed with Pure HTML5, CSS3 &amp; Vanilla JavaScript</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Real-time password criteria checklist handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const pwdInput = document.getElementById('regPassword');
+      const reqLen = document.getElementById('reqLength');
+      const reqNum = document.getElementById('reqNumber');
+      const reqUpper = document.getElementById('reqUpper');
+      const reqSym = document.getElementById('reqSymbol');
+
+      pwdInput?.addEventListener('input', (e) => {
+        const val = e.target.value;
+        reqLen?.classList.toggle('valid', val.length >= 6);
+        reqNum?.classList.toggle('valid', /[0-9]/.test(val));
+        reqUpper?.classList.toggle('valid', /[A-Z]/.test(val));
+        reqSym?.classList.toggle('valid', /[^A-Za-z0-9]/.test(val));
+      });
+    });
+  </script>
+</body>
+</html>

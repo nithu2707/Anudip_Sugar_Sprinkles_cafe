@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the culinary heritage and artisanal food philosophy behind CFE Restaurant. Meet our executive chefs and explore our dedication to fine dining.">
+  <title>About Us | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link active">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE HERO
+       ======================================================================== -->
+  <main>
+    <section style="background:linear-gradient(135deg, #091e14 0%, #123826 100%); color:#ffffff; padding:65px 0 50px; text-align:center;">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(197, 160, 89, 0.2); color:var(--color-accent-light);">Our Legacy</span>
+        <h1 style="color:#ffffff; margin-bottom:14px;">The Story of CFE Restaurant</h1>
+        <p style="color:rgba(255, 255, 255, 0.85); max-width:640px; margin:0 auto; font-size:1.05rem;">
+          A journey celebrating royal culinary legacies, artisanal sourdough wood-fired baking, and masterfully blended spices since 2012.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HERITAGE STORY & PHILOSOPHY
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="story-grid">
+          <div>
+            <span class="section-tag">Culinary Heritage</span>
+            <h2 style="margin-bottom:20px;">Rooted in Tradition, Elevated by Modern Artistry</h2>
+            <p style="color:var(--color-text-muted); line-height:1.75; margin-bottom:18px;">
+              CFE Restaurant was born from a singular vision: to create a sanctuary where the profound richness of authentic Indian recipes meets international culinary precision. What started as an intimate café has evolved into an iconic culinary destination.
+            </p>
+            <p style="color:var(--color-text-muted); line-height:1.75; margin-bottom:24px;">
+              We believe food is not merely sustenance, but an emotional dialogue between the master chef and the honored guest. Every morning, our chefs source fresh organic vegetables, cold-pressed oils, hand-churned white butter, and farm-fresh poultry to craft each dish from scratch.
+            </p>
+            <div style="border-left:3px solid var(--color-accent); padding-left:18px; margin-bottom:24px;">
+              <p style="font-family:var(--font-heading); font-size:1.15rem; font-style:italic; color:var(--color-primary-dark);">
+                "We never compromise on the purity of ingredients or the patience required for genuine slow cooking."
+              </p>
+              <span style="font-size:0.85rem; color:var(--color-accent-dark); font-weight:700;">— Chef Vikram Rathore, Culinary Director</span>
+            </div>
+          </div>
+
+          <div>
+            <div style="border-radius:24px; overflow:hidden; box-shadow:var(--shadow-lg); border:2px solid var(--color-border);">
+              <img src="assets/images/ramyacafe.jpeg" alt="CFE Restaurant Entrance" style="width:100%; height:420px; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         OUR 4 PILLARS OF EXCELLENCE
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Guiding Pillars</span>
+          <h2>The CFE Food Philosophy</h2>
+          <p class="section-subtitle">
+            Every dish served across our 8 categories adheres to strict culinary standards.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:30px;">
+          <!-- Pillar 1 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:54px; height:54px; border-radius:14px; background:rgba(197, 160, 89, 0.15); color:var(--color-accent-dark); font-size:1.6rem; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">🌿</div>
+            <h3 style="font-size:1.25rem; margin-bottom:10px;">Stone-Ground Aromatics</h3>
+            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.65;">
+              Spices are dry-roasted and stone-ground in our prep kitchens daily to unlock deep essential aromas without burning delicate oils.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:54px; height:54px; border-radius:14px; background:rgba(197, 160, 89, 0.15); color:var(--color-accent-dark); font-size:1.6rem; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">🔥</div>
+            <h3 style="font-size:1.25rem; margin-bottom:10px;">Wood-Fired Hearth</h3>
+            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.65;">
+              Our hand-built wood oven burns cured oak timber at 450°C, producing blistered, airy sourdough crusts with irresistible smokiness.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:54px; height:54px; border-radius:14px; background:rgba(197, 160, 89, 0.15); color:var(--color-accent-dark); font-size:1.6rem; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">🏺</div>
+            <h3 style="font-size:1.25rem; margin-bottom:10px;">Dum Pukht Sealing</h3>
+            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.65;">
+              Biryanis and slow meats are sealed with whole wheat dough rims, allowing food to gently cook in its own juices and steam.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <div style="width:54px; height:54px; border-radius:14px; background:rgba(197, 160, 89, 0.15); color:var(--color-accent-dark); font-size:1.6rem; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">☕</div>
+            <h3 style="font-size:1.25rem; margin-bottom:10px;">Artisanal Roastery</h3>
+            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.65;">
+              Single-estate Arabica beans from the misty slopes of Chikmagalur, roasted to medium profile and brewed with clear clear-ice precision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MEET THE CULINARY MASTERS
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Master Craftsmen</span>
+          <h2>The Executive Chef Brigade</h2>
+          <p class="section-subtitle">
+            Meet the culinary artists curating your memorable dining experiences every evening.
+          </p>
+        </div>
+
+        <div class="chef-grid">
+          <!-- Chef 1 -->
+          <div class="chef-card">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Executive Chef Vikram Rathore" class="chef-img">
+            <div class="chef-info">
+              <h3 style="font-size:1.25rem; margin-bottom:4px;">Vikram Rathore</h3>
+              <div style="color:var(--color-accent-dark); font-weight:700; font-size:0.85rem; margin-bottom:10px;">Executive Culinary Director</div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.6;">
+                Over 22 years mastering royal Awadhi gravies, dum cooking techniques, and heritage Indian banquet gastronomy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chef 2 -->
+          <div class="chef-card">
+            <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?auto=format&fit=crop&w=600&q=80" alt="Chef Elena Rossi" class="chef-img">
+            <div class="chef-info">
+              <h3 style="font-size:1.25rem; margin-bottom:4px;">Elena Rossi</h3>
+              <div style="color:var(--color-accent-dark); font-weight:700; font-size:0.85rem; margin-bottom:10px;">Head Pizzaiolo &amp; European Master</div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.6;">
+                Trained in Naples, Italy. Specialist in sourdough cold fermentation, Neapolitan pizzas, and handmade pasta pillows.
+              </p>
+            </div>
+          </div>
+
+          <!-- Chef 3 -->
+          <div class="chef-card">
+            <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=600&q=80" alt="Chef Devika Shenoy" class="chef-img">
+            <div class="chef-info">
+              <h3 style="font-size:1.25rem; margin-bottom:4px;">Devika Shenoy</h3>
+              <div style="color:var(--color-accent-dark); font-weight:700; font-size:0.85rem; margin-bottom:10px;">Master Pâtissière &amp; Roaster</div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.6;">
+                Creator of our Belgian molten chocolate lava cakes and single-origin cold-drip coffee profiles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         RESTAURANT AMBIENCE GALLERY
+         ======================================================================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Gourmet Moments</span>
+          <h2>The CFE Gallery</h2>
+          <p class="section-subtitle">
+            A glimpse into our crafted dishes, warm candle-lit booths, and lively café spaces.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/images/pizza.png" alt="Wood Fired Pizza" onerror="this.src='https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Wood-Fired Neapolitan Pizza</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/cake.jpeg" alt="Molten Lava Cake" onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Belgian Molten Chocolate Cake</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/coffeee.jpeg" alt="Specialty Coffee" onerror="this.src='https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Single-Origin Arabica Brew</div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/chessballs.jpg" alt="Artisan Cheese Balls" onerror="this.src='https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=800&q=80'">
+            <div class="gallery-overlay">Crispy Jalapeño Cheese Poppers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section" style="text-align:center;">
+      <div class="container-narrow">
+        <span class="section-tag">Taste the Tradition</span>
+        <h2 style="margin-bottom:16px;">Ready to Dine With Us?</h2>
+        <p style="color:var(--color-text-muted); font-size:1.05rem; margin-bottom:30px;">
+          Reserve your table for an enchanting culinary journey or explore our menu for immediate dining.
+        </p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <a href="reservation.html" class="btn btn-gold btn-lg">Book a Table</a>
+          <a href="menu.html" class="btn btn-primary btn-lg">Browse 8 Categories</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and bespoke dining.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Pages</h4>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="menu.html" class="footer-link">Our Menu</a>
+          <a href="reservation.html" class="footer-link">Reserve a Table</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Daily:</span>
+            <strong>11:30 AM – 11:30 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Address Placeholder</h4>
+        <div style="font-size:0.88rem; color:rgba(255, 255, 255, 0.75);">
+          <p>42 Royal Promenade, Indiranagar, Bengaluru, KA 560038</p>
+          <p style="margin-top:6px;">reservations@cferestaurant.example.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Culinary Heritage &amp; Artisans</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+</body>
+</html>

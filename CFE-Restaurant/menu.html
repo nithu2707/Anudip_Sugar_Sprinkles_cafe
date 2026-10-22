@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CFE Restaurant Menu - Explore our 8 signature gourmet categories: Starters, South Indian, North Indian, Biryani, Chinese, Pizza & Burgers, Desserts, and Specialty Beverages.">
+  <title>Menu | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link active">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE HERO / BANNER
+       ======================================================================== -->
+  <main>
+    <section style="background:linear-gradient(135deg, #091e14 0%, #123826 100%); color:#ffffff; padding:60px 0 45px; text-align:center;">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(197, 160, 89, 0.2); color:var(--color-accent-light);">Culinary Repertoire</span>
+        <h1 style="color:#ffffff; margin-bottom:12px;">The Gourmet Menu</h1>
+        <p style="color:rgba(255, 255, 255, 0.8); max-width:640px; margin:0 auto; font-size:1.05rem;">
+          Explore all 8 authentic categories meticulously curated with stone-ground spices, hand-pulled noodles, slow-simmered handi dum, and European artisanal desserts.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MENU CONTROLS & DISHES GRID
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <!-- Filter and Search Toolbar -->
+        <div class="menu-controls">
+          <div class="menu-search-row">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="text" id="menuSearchInput" class="search-input" placeholder="Search dishes by name, spice, or ingredient (e.g. Biryani, Paneer, Pizza)...">
+            </div>
+
+            <!-- Dietary Toggle Filters -->
+            <div class="diet-filter-wrap">
+              <button class="diet-toggle-btn active" data-diet="all">All Dishes</button>
+              <button class="diet-toggle-btn" data-diet="veg">
+                <span class="diet-badge veg" style="position:static; width:14px; height:14px;"></span> Veg Only
+              </button>
+              <button class="diet-toggle-btn" data-diet="non-veg">
+                <span class="diet-badge non-veg" style="position:static; width:14px; height:14px;"></span> Non-Veg
+              </button>
+            </div>
+
+            <!-- Sort By Select -->
+            <div>
+              <select id="menuSortSelect" class="filter-select" aria-label="Sort dishes">
+                <option value="default">Featured / Default</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Rating: Highest First</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 8 Categories Filter Pills -->
+          <div class="category-pills" role="tablist">
+            <button class="category-pill active" data-category="All">All Delicacies</button>
+            <button class="category-pill" data-category="Starters">Starters</button>
+            <button class="category-pill" data-category="South Indian">South Indian</button>
+            <button class="category-pill" data-category="North Indian">North Indian</button>
+            <button class="category-pill" data-category="Biryani">Biryani</button>
+            <button class="category-pill" data-category="Chinese">Chinese</button>
+            <button class="category-pill" data-category="Pizza and Burgers">Pizza and Burgers</button>
+            <button class="category-pill" data-category="Desserts">Desserts</button>
+            <button class="category-pill" data-category="Beverages">Beverages</button>
+          </div>
+        </div>
+
+        <!-- Real-time Count Indicator -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+          <p id="resultsCount" style="font-size:0.92rem; color:var(--color-text-muted); font-weight:600;">
+            Showing all dishes...
+          </p>
+          <a href="cart.html" class="btn btn-outline btn-sm" style="gap:6px;">
+            <span>View Cart</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Dynamic Dishes Grid (Rendered by js/menu.js) -->
+        <div class="dishes-grid" id="dishesContainer">
+          <!-- Loaded dynamically by js/menu.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and bespoke dining.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Menu Categories</h4>
+        <div class="footer-links">
+          <a href="menu.html?category=Starters" class="footer-link">Starters &amp; Small Plates</a>
+          <a href="menu.html?category=South%20Indian" class="footer-link">South Indian Tiffin</a>
+          <a href="menu.html?category=North%20Indian" class="footer-link">North Indian Gravies &amp; Tandoor</a>
+          <a href="menu.html?category=Biryani" class="footer-link">Dum Pukht Biryanis</a>
+          <a href="menu.html?category=Pizza%20and%20Burgers" class="footer-link">Wood-Fired Pizza &amp; Burgers</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Opening Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Mon – Fri:</span>
+            <strong>11:30 AM – 11:00 PM</strong>
+          </div>
+          <div class="footer-hours-item">
+            <span>Sat – Sun:</span>
+            <strong>10:30 AM – Midnight</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Location</h4>
+        <div style="font-size:0.88rem; color:rgba(255, 255, 255, 0.75); display:flex; flex-direction:column; gap:10px;">
+          <p>📍 42 Royal Promenade, 100ft Road, Indiranagar, Bengaluru 560038</p>
+          <p>📞 Phone: +91 98765 43210</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Taste. Passion. Excellence.</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

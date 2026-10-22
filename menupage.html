@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the artisan menu of Sugar Sprinkles Cafe: specialty roasted coffee, freshly baked red velvet and Belgian chocolate cakes, wood-fired sourdough pizzas, and cold-pressed drinks.">
+  <title>Our Artisan Menu | Sugar Sprinkles Cafe</title>
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/sugar-sprinkles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       STICKY NAVIGATION BAR (SMOOTH HOVER ANIMATIONS)
+       ======================================================================== -->
+  <header class="site-nav" id="mainHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-wrap">
+        <div class="brand-cup">☕</div>
+        <div class="brand-titles">
+          <span class="brand-name">Sugar Sprinkles Cafe</span>
+          <span class="brand-tagline">Artisan Brews &amp; Bakery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links with Hover Animations -->
+      <nav class="nav-menu">
+        <a href="index.html#hero" class="nav-item">Home</a>
+        <a href="menupage.html" class="nav-item active">Our Menu</a>
+        <a href="index.html#story" class="nav-item">Our Story</a>
+        <a href="index.html#specials" class="nav-item">Sweet Treats</a>
+        <a href="homepage.html" class="nav-item">My Account</a>
+        <a href="index.html#contact" class="nav-item">Visit Us</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-right">
+        <!-- Cart Drawer Trigger Button -->
+        <button class="cart-btn" id="openCartDrawerBtn" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-counter" id="cartBadgeCount">0</span>
+        </button>
+
+        <!-- Glassmorphism Auth Modal Trigger Button -->
+        <button class="btn btn-pink btn-sm" id="openAuthModalBtn">
+          <span>✨</span> Sign In
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       PAGE HEADER BANNER (WARM BROWNS & PASTEL SPRINKLES)
+       ======================================================================== -->
+  <section style="background:linear-gradient(135deg, var(--c-brown-deep) 0%, var(--c-brown-dark) 50%, var(--c-brown) 100%); color:#fff; padding:70px 0 55px; position:relative; overflow:hidden;">
+    <div class="hero-sprinkles-overlay"></div>
+    <div class="container" style="position:relative; z-index:2; text-align:center;">
+      <div class="hero-pill-badge" style="margin:0 auto 16px;">
+        <span>🧁</span> ARTISAN CAFE DELIGHTS
+      </div>
+      <h1 style="color:#ffffff; margin-bottom:14px; font-size:clamp(2.2rem, 4.2vw, 3.4rem);">
+        Handcrafted Brews &amp; <span>Sweet Confections</span>
+      </h1>
+      <p style="color:rgba(255,255,255,0.85); max-width:620px; margin:0 auto 24px; font-size:1.05rem; line-height:1.7;">
+        Made fresh to order with single-origin Arabica, Belgian dark chocolate, cultured butter, and slow-fermented sourdough. Hover to zoom or tap "Flip Info" for tasting notes.
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-outline-white btn-sm">← Back to Home</a>
+        <a href="homepage.html" class="btn btn-pink btn-sm">VIP Member Club ✨</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MENU SHOWCASE SECTION (FILTER, SEARCH & 3D FLIP/ZOOM GRID)
+       ======================================================================== -->
+  <main class="section" style="padding-top:50px;">
+    <div class="container">
+      <!-- Menu Search & Filter Toolbar -->
+      <div class="menu-toolbar">
+        <div class="menu-search-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="sugarMenuSearch" class="menu-search-input" placeholder="Search coffee, red velvet, pizzas, sandwiches, cheese balls...">
+        </div>
+
+        <div class="category-filter-list" role="tablist">
+          <button class="category-btn active" data-category="All">All Delights</button>
+          <button class="category-btn" data-category="Specialty Coffee">Specialty Coffee</button>
+          <button class="category-btn" data-category="Cakes &amp; Pastries">Cakes &amp; Pastries</button>
+          <button class="category-btn" data-category="Savory Bites">Savory Bites</button>
+          <button class="category-btn" data-category="Cold Drinks">Cold Drinks</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid (Filled dynamically with hover zoom & 3D flip by sugar-sprinkles.js) -->
+      <div class="menu-grid" id="sugarMenuGrid"></div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       LOGIN / REGISTRATION MODAL
+       ======================================================================== -->
+  <div class="glass-modal-overlay" id="glassAuthModal">
+    <div class="glass-modal-card">
+      <button class="glass-modal-close" id="closeGlassModalBtn" aria-label="Close modal">&times;</button>
+
+      <!-- Modal Heading -->
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="width:48px; height:48px; border-radius:50%; background:var(--c-pink-soft); color:var(--c-pink-accent); font-size:1.4rem; display:flex; align-items:center; justify-content:center; margin:0 auto 10px;">✨</div>
+        <h2 id="glassModalTitle" style="font-size:1.6rem; margin-bottom:4px; color:var(--c-brown-dark);">Welcome to Sugar Sprinkles</h2>
+        <p id="glassModalSub" style="font-size:0.86rem; color:var(--c-text-muted);">Sign in for sweet treats and cafe privileges.</p>
+      </div>
+
+      <!-- Segmented Tabs -->
+      <div class="glass-tabs">
+        <button type="button" class="glass-tab-btn active" id="glassTabLogin">Sign In</button>
+        <button type="button" class="glass-tab-btn" id="glassTabRegister">Create Account</button>
+      </div>
+
+      <!-- 1-Click Demo Guest Sign-In -->
+      <div class="glass-quick-demo">
+        <div>
+          <strong>Fast Demo Evaluation</strong>
+          <span>Instant 1-click test sign in</span>
+        </div>
+        <button type="button" class="btn btn-pink btn-sm" id="glassQuickDemoBtn">
+          ⚡ 1-Click Demo
+        </button>
+      </div>
+
+      <!-- Form 1: Sign In -->
+      <form id="glassLoginForm">
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassLoginEmail">Email Address</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">✉</span>
+            <input type="email" id="glassLoginEmail" class="glass-input" placeholder="you@example.com" value="sweet@sugarsprinkles.com" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassLoginPassword">Password</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">🔒</span>
+            <input type="password" id="glassLoginPassword" class="glass-input" placeholder="Enter password" value="sprinkles123" required>
+            <button type="button" class="glass-pwd-toggle" data-target="glassLoginPassword">👁</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">
+          Sign In to Cafe
+        </button>
+      </form>
+
+      <!-- Form 2: Create Account -->
+      <form id="glassRegisterForm" style="display:none;">
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegName">Your Name</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">👤</span>
+            <input type="text" id="glassRegName" class="glass-input" placeholder="How should we greet you?" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegEmail">Email Address</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">✉</span>
+            <input type="email" id="glassRegEmail" class="glass-input" placeholder="you@domain.com" required>
+          </div>
+        </div>
+
+        <div class="glass-form-group">
+          <label class="glass-label" for="glassRegPassword">Create Password</label>
+          <div class="glass-input-wrap">
+            <span class="glass-input-icon">🔒</span>
+            <input type="password" id="glassRegPassword" class="glass-input" placeholder="At least 6 characters" required>
+            <button type="button" class="glass-pwd-toggle" data-target="glassRegPassword">👁</button>
+          </div>
+          <div class="glass-strength-meter">
+            <div class="glass-strength-bar" id="glassStrengthBar"></div>
+          </div>
+          <div class="glass-strength-text" id="glassStrengthText"></div>
+        </div>
+
+        <button type="submit" class="btn btn-pink" style="width:100%; margin-top:10px;">
+          Create My Sweet Account
+        </button>
+      </form>
+
+      <div style="font-size:0.75rem; text-align:center; color:var(--c-text-muted); margin-top:18px;">
+        🔒 Demo Session: Stored in browser localStorage. No real credentials transmitted.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SLIDING SHOPPING CART DRAWER
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-head">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:1.3rem;">🧁</span>
+        <h3 style="margin:0; font-size:1.25rem;">Your Sweet Bag</h3>
+      </div>
+      <button id="closeCartDrawerBtn" style="font-size:1.5rem; color:var(--c-text-muted); cursor:pointer;">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerItems"></div>
+
+    <div class="cart-drawer-foot">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <span style="font-weight:600; color:var(--c-text-muted);">Total Amount:</span>
+        <strong id="cartDrawerTotal" style="font-size:1.4rem; color:var(--c-brown-dark); font-family:var(--font-serif);">₹0</strong>
+      </div>
+      <button class="btn btn-pink" id="sugarCheckoutBtn" style="width:100%; margin-bottom:10px;">
+        Complete Demo Order
+      </button>
+      <button class="btn btn-outline" id="clearSugarCartBtn" style="width:100%; font-size:0.82rem; padding:8px;">
+        Clear Bag
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       FOOTER (WARM BROWNS & PASTEL DETAILS)
+       ======================================================================== -->
+  <footer class="site-foot">
+    <div class="container foot-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+          <div class="brand-cup" style="width:36px; height:36px; font-size:1rem;">☕</div>
+          <span style="font-family:var(--font-serif); font-size:1.35rem; font-weight:800; color:#ffffff;">Sugar Sprinkles</span>
+        </div>
+        <p style="font-size:0.88rem; color:rgba(255, 255, 255, 0.7); line-height:1.7;">
+          Your cozy neighborhood cafe for handcrafted espresso brews, molten chocolate cakes, and sweet memories.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="foot-title">Explore</h4>
+        <a href="index.html#hero" class="foot-link">Home</a>
+        <a href="menupage.html" class="foot-link">Our Menu</a>
+        <a href="index.html#story" class="foot-link">Our Story</a>
+        <a href="homepage.html" class="foot-link">Account</a>
+      </div>
+
+      <div>
+        <h4 class="foot-title">Cafe Hours</h4>
+        <p style="font-size:0.86rem; color:rgba(255, 255, 255, 0.75); line-height:1.6;">
+          Mon – Fri: 08:00 AM – 10:00 PM<br>
+          Sat – Sun: 08:30 AM – 11:00 PM<br>
+          Afternoon Tea: 03:30 PM – 06:00 PM
+        </p>
+      </div>
+
+      <div>
+        <h4 class="foot-title">Visit Us</h4>
+        <p style="font-size:0.86rem; color:rgba(255, 255, 255, 0.75); line-height:1.6;">
+          📍 12 Sugar Sprinkles Lane, RR Nagar, Bengaluru<br>
+          📞 +91 6363620034<br>
+          ✉ hello@manu.com
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="border-top:1px solid rgba(255, 255, 255, 0.1); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:rgba(255, 255, 255, 0.5);">
+      <div>&copy; 2026 Sugar Sprinkles Cafe. All rights reserved.</div>
+      <div>Crafted with Warm Browns, Creamy Whites, Pastel Pinks &amp; Gold ✨</div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript File -->
+  <script src="js/sugar-sprinkles.js"></script>
+</body>
+</html>

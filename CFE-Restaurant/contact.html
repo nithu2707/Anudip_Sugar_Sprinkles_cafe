@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact CFE Restaurant - Find our address in Indiranagar, Bengaluru, opening hours, contact phone numbers, or submit an inquiry for events and private banquets.">
+  <title>Contact Us | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE HERO
+       ======================================================================== -->
+  <main>
+    <section style="background:linear-gradient(135deg, #091e14 0%, #123826 100%); color:#ffffff; padding:65px 0 50px; text-align:center;">
+      <div class="container">
+        <span class="section-tag" style="background:rgba(197, 160, 89, 0.2); color:var(--color-accent-light);">Get in Touch</span>
+        <h1 style="color:#ffffff; margin-bottom:12px;">We'd Love to Hear From You</h1>
+        <p style="color:rgba(255, 255, 255, 0.85); max-width:620px; margin:0 auto; font-size:1.05rem;">
+          Whether you have a query about our menu, require catering for an event, or wish to share feedback on your recent visit, our hospitality team is here for you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT GRID: FORM & INFORMATION CARDS
+         ======================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- LEFT: Contact Form -->
+          <div style="background:#ffffff; border-radius:var(--radius-lg); padding:38px; border:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+            <h2 style="font-size:1.6rem; margin-bottom:8px;">Send a Message</h2>
+            <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:28px;">
+              Fill in the form below and we will get back to you within 24 business hours.
+            </p>
+
+            <form id="contactForm" novalidate>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="contactName">Your Name *</label>
+                  <input type="text" id="contactName" class="form-control no-icon" placeholder="e.g. Maya Iyer" required>
+                  <span class="form-error" id="contactNameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactEmail">Email Address *</label>
+                  <input type="email" id="contactEmail" class="form-control no-icon" placeholder="maya@example.com" required>
+                  <span class="form-error" id="contactEmailError"></span>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div class="form-group">
+                  <label class="form-label" for="contactPhone">Mobile Number</label>
+                  <input type="tel" id="contactPhone" class="form-control no-icon" placeholder="e.g. +91 98765 43210">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactSubject">Subject Inquiry</label>
+                  <select id="contactSubject" class="form-control no-icon">
+                    <option value="General Dining Inquiry">General Dining Inquiry</option>
+                    <option value="Private Banquet / Event">Private Banquet / Event</option>
+                    <option value="Custom Catering Request">Custom Catering Request</option>
+                    <option value="Feedback / Compliment">Feedback / Compliment</option>
+                    <option value="Press & Media Relations">Press &amp; Media Relations</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Your Message *</label>
+                <textarea id="contactMessage" class="form-control no-icon" rows="5" placeholder="Share your message or request with us..." required></textarea>
+                <span class="form-error" id="contactMsgError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:10px;">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- RIGHT: Restaurant Details & Map Mockup -->
+          <div class="contact-info-cards">
+            <!-- Card 1: Address -->
+            <div class="contact-info-card">
+              <div class="contact-icon-box">📍</div>
+              <div>
+                <strong style="display:block; font-size:1.05rem; margin-bottom:4px; color:var(--color-primary-dark);">Our Location (Placeholder)</strong>
+                <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6;">
+                  CFE Restaurant, 42 Royal Promenade, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038, India
+                </p>
+                <div style="font-size:0.8rem; color:var(--color-accent-dark); font-weight:700; margin-top:6px;">
+                  Valet parking available at restaurant entrance.
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Contact Numbers -->
+            <div class="contact-info-card">
+              <div class="contact-icon-box">📞</div>
+              <div>
+                <strong style="display:block; font-size:1.05rem; margin-bottom:4px; color:var(--color-primary-dark);">Telephone &amp; Direct Desk</strong>
+                <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6;">
+                  Dining Reservations: <strong>+91 98765 43210</strong><br>
+                  Concierge &amp; Events: <strong>+91 80 4123 4567</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3: Email -->
+            <div class="contact-info-card">
+              <div class="contact-icon-box">✉</div>
+              <div>
+                <strong style="display:block; font-size:1.05rem; margin-bottom:4px; color:var(--color-primary-dark);">Electronic Mail</strong>
+                <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6;">
+                  General &amp; Tables: <strong>reservations@cferestaurant.example.com</strong><br>
+                  Events: <strong>banquets@cferestaurant.example.com</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Operating Hours -->
+            <div class="contact-info-card">
+              <div class="contact-icon-box">⏰</div>
+              <div>
+                <strong style="display:block; font-size:1.05rem; margin-bottom:4px; color:var(--color-primary-dark);">Opening Hours</strong>
+                <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6;">
+                  Monday – Sunday: <strong>11:30 AM – 11:30 PM</strong><br>
+                  Weekend Late Night Dining: <strong>Until 12:30 AM</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- Interactive Map Mockup Card -->
+            <div style="background:#ffffff; border-radius:var(--radius-md); padding:18px; border:1px solid var(--color-border); text-align:center;">
+              <div style="height:150px; background:linear-gradient(135deg, #e4ded3 0%, #d8d0c2 100%); border-radius:var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                <div style="font-size:2.5rem; color:var(--color-primary);">🗺️</div>
+                <div style="font-weight:700; color:var(--color-primary-dark); font-size:0.95rem; margin-top:4px;">Indiranagar Promenade, Bengaluru</div>
+                <div style="font-size:0.75rem; color:var(--color-text-muted);">Interactive Map Demonstration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="brand-emblem" style="width:36px; height:36px; font-size:1rem;">CFE</div>
+          <span style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#ffffff;">CFE Restaurant</span>
+        </div>
+        <p class="footer-text">
+          Where culinary heritage meets contemporary luxury. Authentic Indian traditions, wood-fired delights, and bespoke dining.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Pages</h4>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="menu.html" class="footer-link">Menu</a>
+          <a href="reservation.html" class="footer-link">Reservations</a>
+          <a href="about.html" class="footer-link">About Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Daily Hours</h4>
+        <div class="footer-hours-list">
+          <div class="footer-hours-item">
+            <span>Lunch &amp; Dinner:</span>
+            <strong>11:30 AM – 11:30 PM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Placeholder Notice</h4>
+        <p style="font-size:0.82rem; color:rgba(255, 255, 255, 0.6); line-height:1.6;">
+          All addresses, emails, and contact numbers displayed on this page are demonstration placeholders.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved.</div>
+      <div>Contact &amp; Concierge Desk</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script>
+    // Contact Form Validation & Handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('contactName').value.trim();
+          const email = document.getElementById('contactEmail').value.trim();
+          const message = document.getElementById('contactMessage').value.trim();
+
+          let isValid = true;
+
+          if (name.length < 2) {
+            document.getElementById('contactNameError').textContent = 'Please enter your name.';
+            document.getElementById('contactNameError').classList.add('visible');
+            isValid = false;
+          } else {
+            document.getElementById('contactNameError').classList.remove('visible');
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            document.getElementById('contactEmailError').textContent = 'Please enter a valid email address.';
+            document.getElementById('contactEmailError').classList.add('visible');
+            isValid = false;
+          } else {
+            document.getElementById('contactEmailError').classList.remove('visible');
+          }
+
+          if (message.length < 5) {
+            document.getElementById('contactMsgError').textContent = 'Please enter your message (at least 5 characters).';
+            document.getElementById('contactMsgError').classList.add('visible');
+            isValid = false;
+          } else {
+            document.getElementById('contactMsgError').classList.remove('visible');
+          }
+
+          if (!isValid) return;
+
+          showToast('Message Sent', `Thank you ${name}, our guest relations team will respond shortly.`, 'success');
+          contactForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

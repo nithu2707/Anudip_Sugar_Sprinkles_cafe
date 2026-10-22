@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to your CFE Restaurant account. Enjoy priority fine dining reservations, tasting menu previews, and customized gourmet dining.">
+  <title>Sign In | CFE Restaurant</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVIGATION
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CFE Restaurant Home">
+        <div class="brand-emblem">CFE</div>
+        <div class="brand-text">
+          <span class="brand-title">CFE Restaurant</span>
+          <span class="brand-subtitle">Fine Dining &amp; Café</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-trigger" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="navCartBadge">0</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Our Menu</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="reservation.html" class="mobile-nav-link">Reserve Table</a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Cart</a>
+    </nav>
+  </aside>
+
+  <!-- ========================================================================
+       PRO UI SPLIT-SCREEN AUTHENTICATION SUITE
+       ======================================================================== -->
+  <main class="auth-wrapper">
+    <div class="auth-split-card">
+      <!-- LEFT COLUMN: LUXURY BRAND & PRIVILEGES SHOWCASE -->
+      <section class="auth-showcase-panel">
+        <div class="auth-showcase-glow"></div>
+        
+        <div>
+          <!-- Brand Badge -->
+          <div class="auth-brand-badge">
+            <div class="brand-emblem" style="width:48px; height:48px; font-size:1.3rem;">CFE</div>
+            <div>
+              <div style="font-family:var(--font-heading); font-size:1.35rem; font-weight:800; letter-spacing:0.04em;">CFE Restaurant</div>
+              <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-accent-light);">Epicurean Society</div>
+            </div>
+          </div>
+
+          <!-- Culinary Director Quote -->
+          <div class="auth-showcase-quote">
+            <p class="auth-quote-text">
+              "True gastronomy transcends the plate—it is an intimate celebration of flavor, warmth, and timeless heritage."
+            </p>
+            <div class="auth-quote-author">— Executive Chef Vikram Rathore</div>
+          </div>
+
+          <!-- Membership Privileges -->
+          <div class="auth-privileges-box">
+            <div class="auth-privileges-title">
+              <span>✦</span> Member Privileges
+            </div>
+            
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Priority Table Placements</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Zero waiting time on weekend lunch &amp; dinner slots.</div>
+              </div>
+            </div>
+
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Complimentary Amuse-Bouche</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">Handcrafted seasonal chef greeting served on arrival.</div>
+              </div>
+            </div>
+
+            <div class="auth-privilege-item">
+              <span class="auth-privilege-icon">✓</span>
+              <div>
+                <strong>Sommelier Flights &amp; Tastings</strong>
+                <div style="font-size:0.8rem; opacity:0.8;">First invitations to seasonal pairings and dessert showcases.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accolade Footer -->
+        <div class="auth-showcase-footer">
+          <span>★ Ranked in Top 50 Fine Dining Experiences 2026</span>
+          <span style="color:var(--color-accent-light);">Bengaluru, India</span>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: PROFESSIONAL FORM SUITE -->
+      <section class="auth-form-panel">
+        <!-- Top Back Nav -->
+        <div class="auth-top-nav">
+          <a href="index.html" class="auth-back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Home
+          </a>
+          <a href="contact.html" style="font-size:0.84rem; color:var(--color-text-muted); font-weight:600;">Need Help?</a>
+        </div>
+
+        <!-- Seamless Segmented Tabs: Sign In vs Create Account -->
+        <nav class="auth-tabs-nav" aria-label="Authentication Switcher">
+          <a href="login.html" class="auth-tab-link active">Sign In</a>
+          <a href="register.html" class="auth-tab-link">Create Account</a>
+        </nav>
+
+        <!-- Header -->
+        <div style="margin-bottom:22px;">
+          <h1 style="font-size:2rem; margin-bottom:6px; color:var(--color-primary-dark);">Welcome Back</h1>
+          <p style="color:var(--color-text-muted); font-size:0.92rem;">
+            Enter your credentials to access your dining reservations and profile.
+          </p>
+        </div>
+
+        <!-- 1-Click Quick Demo Sign-in Box -->
+        <div class="auth-quick-login">
+          <div class="auth-quick-login-text">
+            <strong>Fast Evaluation Mode</strong>
+            <span>Sign in instantly with pre-configured guest data.</span>
+          </div>
+          <button type="button" class="btn btn-gold btn-sm" id="quickDemoBtn" style="gap:6px;">
+            <span>⚡</span> 1-Click Demo Sign-In
+          </button>
+        </div>
+
+        <div class="auth-divider">Or sign in with email</div>
+
+        <!-- Main Form -->
+        <form id="loginForm" novalidate>
+          <!-- Email / Username Input -->
+          <div class="form-group">
+            <label class="form-label" for="loginIdentifier">Email Address or Username</label>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <input type="text" id="loginIdentifier" class="form-control" placeholder="name@example.com or username" required autocomplete="username">
+            </div>
+            <span class="form-error" id="loginIdError"></span>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
+              <label class="form-label" for="loginPassword" style="margin-bottom:0;">Password</label>
+              <a href="#" id="forgotPasswordBtn" style="font-size:0.82rem; color:var(--color-accent-dark); font-weight:700;">Forgot Password?</a>
+            </div>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" data-target="loginPassword" aria-label="Toggle password visibility">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="form-error" id="loginPassError"></span>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+            <input type="checkbox" id="rememberMe" style="accent-color:var(--color-primary); width:18px; height:18px; cursor:pointer;" checked>
+            <label for="rememberMe" style="font-size:0.88rem; color:var(--color-text-muted); cursor:pointer;">Keep me signed in on this device</label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%; gap:8px;">
+            <span>Sign In to CFE Restaurant</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <!-- Sandbox Security Note -->
+        <div style="margin-top:24px; padding:12px; background:var(--color-bg); border-radius:var(--radius-sm); border:1px solid var(--color-border); font-size:0.78rem; color:var(--color-text-muted); text-align:center;">
+          🔒 <strong>Frontend Demo Environment:</strong> Sensitive credentials are never transmitted over a network. Safe client-side session emulation.
+        </div>
+
+        <!-- Switch to Registration -->
+        <div style="text-align:center; margin-top:20px; font-size:0.9rem; color:var(--color-text-muted);">
+          Don't have an account yet? <a href="register.html" style="color:var(--color-accent-dark); font-weight:700;">Join CFE Restaurant</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:none; padding:20px 0;">
+      <div>&copy; 2026 CFE Restaurant. All rights reserved. Commercial Frontend Demonstration.</div>
+      <div>Designed with Pure HTML5, CSS3 &amp; Vanilla JavaScript</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Quick Demo Button Handler
+    document.getElementById('quickDemoBtn')?.addEventListener('click', () => {
+      document.getElementById('loginIdentifier').value = 'ananya@example.com';
+      document.getElementById('loginPassword').value = 'secret123';
+      document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+    });
+  </script>
+</body>
+</html>
